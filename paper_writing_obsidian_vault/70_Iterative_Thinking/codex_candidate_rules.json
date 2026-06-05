@@ -1,0 +1,37 @@
+{
+  "candidate_rules": [
+    {
+      "id": "C1",
+      "title": "DOCX edit scope must be verified before manuscript changes",
+      "category": "process_governance",
+      "conclusion": "Before editing a DOCX manuscript, verify whether the file is the full manuscript or a partial draft. Scope verification is a workflow guard and must not be treated as a manuscript-writing requirement.",
+      "evidence_notes": [
+        "DOCX manuscript edits must distinguish partial drafts from full manuscript"
+      ],
+      "next_test": "Before a DOCX edit, record the target file scope as full manuscript or partial draft, then verify the output file still contains the expected sections.",
+      "rationale": "This candidate separates a recurring DOCX workflow failure from actual paper-writing rules."
+    },
+    {
+      "id": "C2",
+      "title": "Abstract opening should connect application context to core relation",
+      "category": "paper_writing",
+      "conclusion": "The abstract opening may begin from the application context, but it must immediately connect that context to the paper's core research relation. It should bind the study object, key variable or mechanism, and performance or bonding outcome instead of remaining a broad background sentence.",
+      "evidence_notes": [
+        "User decision - abstract opening compromise"
+      ],
+      "next_test": "Check whether the first abstract sentence moves from application context to study object, key mechanism or variable, and performance or bonding outcome without staying at broad background.",
+      "rationale": "The user manually resolved the abstract first-sentence conflict by choosing the compromise option."
+    },
+    {
+      "id": "C3",
+      "title": "Paper framing should keep interface wave and intermetallic compound as dual mainlines",
+      "category": "paper_writing",
+      "conclusion": "The paper should use a coordinated dual-mainline framing: interface wave formation process prediction plus intermetallic compound scale prediction. Interface wave should not be demoted to a validation-only result when describing the paper's central framing.",
+      "evidence_notes": [
+        "User decision - interface wave and intermetallic compound dual mainline"
+      ],
+      "next_test": "Check whether the abstract and introduction preserve both mainlines and avoid writing interface wave only as a validation metric.",
+      "rationale": "The user manually resolved the interface-wave conflict by choosing the dual-mainline framing."
+    }
+  ]
+}

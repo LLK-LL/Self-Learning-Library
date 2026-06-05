@@ -1,0 +1,220 @@
+{
+  "main": {
+    "id": "d56dbc4c2ac9b9ed",
+    "type": "split",
+    "children": [
+      {
+        "id": "2a39fbee6b8c6173",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9519a3e2ede7efc6",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "abf39764e9b0251d",
+    "type": "split",
+    "children": [
+      {
+        "id": "a023f754c27a75a5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "81251afd55c51e1f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "08addab19f5a9e4a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": " ",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "d5648649606ee689",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 347.5
+  },
+  "right": {
+    "id": "7ed1efc23bd63ea3",
+    "type": "split",
+    "children": [
+      {
+        "id": "06b313efee8cc368",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ff23c72fa3613702",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "8ecdcc95f9d9c88a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "10_修改点/2026-06-01 Obsidian Paper Knowledge Base.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "2026-06-01 Obsidian Paper Knowledge Base 的出链列表"
+            }
+          },
+          {
+            "id": "e95b47b85c00bdd1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "55406724a169db9d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "673f4dbdabe952c7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "10_修改点/2026-06-01 Obsidian Paper Knowledge Base.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "2026-06-01 Obsidian Paper Knowledge Base 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "9519a3e2ede7efc6",
+  "lastOpenFiles": [
+    "70_Iterative_Thinking/Iteration 20260605_013349.md",
+    "70_Iterative_Thinking/iteration_20260605_013349.json",
+    "70_Iterative_Thinking/Iteration 20260605_012343.md",
+    "70_Iterative_Thinking/iteration_20260605_012343.json",
+    "45_Supervision/2026-06-05 supervision-priority-below-mentor-scoped-above-ordinary-layers.md",
+    "30_Writing_Rules/High-priority rules require application scope.md",
+    "10_Project_Change_Log/2026-06-05 supervision-priority-scope-workflow-implemented.md",
+    "70_Iterative_Thinking/Iteration 20260605_012236.md",
+    "70_Iterative_Thinking/iteration_20260605_012236.json",
+    "70_Iterative_Thinking/Iteration 20260605_012121.md",
+    "70_Iterative_Thinking/iteration_20260605_012121.json",
+    "20_Paper_Memories/User decision - supervision priority below mentor and scoped.md",
+    "35_Workflow_Governance/Supervision layer priority and scope governance.md",
+    "45_Supervision/2026-06-04 reactive-navier-stokes-reference-format-regression.md",
+    "45_Supervision/2026-06-04 clean-theory-formula-output-promoted-baseline.md",
+    "45_Supervision/2026-06-05 non-newtonian-meta-prose-and-variable-italic-regression.md",
+    "70_Iterative_Thinking/Iteration 20260605_004742.md",
+    "70_Iterative_Thinking/iteration_20260605_004742.json",
+    "30_Writing_Rules/Manuscript body must not contain formatting rationale or audit wording.md",
+    "20_Paper_Memories/User correction - eta and n are variables in non-Newtonian formulas.md",
+    "20_Paper_Memories/User correction - do not put formatting rationale into manuscript body.md",
+    "10_Project_Change_Log/2026-06-05 non-newtonian-prose-meta-and-eta-n-italic-fix.md",
+    "70_Iterative_Thinking/Iteration 20260605_003355.md",
+    "70_Iterative_Thinking/iteration_20260605_003355.json",
+    "20_Paper_Memories/Supervision non-Newtonian formula Word output followed confirmed baseline.md",
+    "10_Project_Change_Log/2026-06-05 non-newtonian-fluid-derivation-word-generated.md",
+    "70_Iterative_Thinking/Codex_manual_analysis_prompt_latest.md",
+    "70_Iterative_Thinking/Iteration 20260605_002547.md",
+    "70_Iterative_Thinking/iteration_20260605_002547.json",
+    "10_Project_Change_Log/2026-06-05 supervised-non-newtonian-fluid-derivation-drafted.md",
+    "70_Iterative_Thinking/Iteration 20260605_002224.md",
+    "70_Iterative_Thinking/iteration_20260605_002224.json",
+    "40_Final_Generalized_Rules/Theory formula Word outputs must follow confirmed professional DOCX baseline.md",
+    "30_Writing_Rules/Theory formula Word outputs must follow confirmed professional DOCX baseline.md",
+    "70_Iterative_Thinking/iteration_20260605_002013.json",
+    "70_Iterative_Thinking/iteration_20260605_001737.json"
+  ]
+}

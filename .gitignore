@@ -1,0 +1,36 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+
+# Local editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Private or heavy working files
+*.docx
+*.doc
+*.pdf
+*.tif
+*.tiff
+*.png
+*.jpg
+*.jpeg
+*.zip
+*.7z
+*.rar
+~$*
+
+# Local scratch/export folders
+word_backups/
+process_files_*/
+non_word_workspace/
+memory_exports/
+extracted_figures*/
+figures/

@@ -1,0 +1,22 @@
+{
+  "queries": {
+    "摘要开头 界面波 金属间化合物 厚度": {
+      "user_requests_evidence": false,
+      "high_risk_topic": true,
+      "formal_manuscript_edit": true,
+      "mentor_or_old_error_risk": true
+    },
+    "引言 文献综述 实验 模拟 差距": {
+      "user_requests_evidence": false,
+      "high_risk_topic": false,
+      "formal_manuscript_edit": true,
+      "mentor_or_old_error_risk": false
+    },
+    "工作流 论文要求 混淆": {
+      "user_requests_evidence": false,
+      "high_risk_topic": true,
+      "formal_manuscript_edit": false,
+      "mentor_or_old_error_risk": true
+    }
+  }
+}

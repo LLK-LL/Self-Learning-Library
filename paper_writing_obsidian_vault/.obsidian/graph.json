@@ -1,0 +1,44 @@
+{
+  "collapse-filter": true,
+  "search": "tag:#layer/evidence OR tag:#layer/reasoning OR tag:#layer/output",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#layer/evidence",
+      "color": {
+        "a": 1,
+        "rgb": 2792847
+      }
+    },
+    {
+      "query": "tag:#layer/reasoning",
+      "color": {
+        "a": 1,
+        "rgb": 16776960
+      }
+    },
+    {
+      "query": "tag:#layer/output",
+      "color": {
+        "a": 1,
+        "rgb": 16711680
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": false,
+  "centerStrength": 0.518713248970312,
+  "repelStrength": 9.58333333333333,
+  "linkStrength": 1,
+  "linkDistance": 250,
+  "scale": 0.5087618855792305,
+  "close": true
+}
