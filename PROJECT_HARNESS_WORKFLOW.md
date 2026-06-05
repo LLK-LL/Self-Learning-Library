@@ -54,6 +54,14 @@ Use lightweight local RAG before loading rule content:
 
 Use `tools/kb_rag.py` when a scripted local RAG retrieval is useful.
 
+Default token-saving call for ordinary manuscript-writing tasks:
+
+```powershell
+py tools\kb_rag.py --query "<task keywords>" --limit 3
+```
+
+Do not add `--include-workflow`, `--include-evidence`, or `--include-related` for ordinary writing tasks. `35_Workflow_Governance` is for workflow/governance questions only. `20_Paper_Memories` should be expanded only when high-risk verification requires evidence. `70_Iterative_Thinking` must not be loaded as ordinary task context; read only targeted excerpts when the user explicitly asks for iteration, screening, final summarization, final generalization, or audit.
+
 ## Source Priority And Scope
 
 When rules or memories conflict, resolve them by source priority and application scope, not by folder order alone.

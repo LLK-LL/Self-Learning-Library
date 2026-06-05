@@ -121,13 +121,19 @@ tools/paper_iteration.py
 PROJECT_HARNESS_WORKFLOW.md
 ```
 
-5. Run a local retrieval test.
+5. Run a token-saving local retrieval test for ordinary content work.
+
+```powershell
+py tools\kb_rag.py --query "revise introduction with mentor feedback" --limit 3
+```
+
+For ordinary writing or content tasks, do not add `--include-workflow`, `--include-evidence`, or `--include-related`. Do not load `70_Iterative_Thinking` as normal task context. Use workflow retrieval only for workflow/governance questions:
 
 ```powershell
 py tools\kb_rag.py --query "how should the system apply rules before a task" --include-workflow
 ```
 
-6. Run a full iteration.
+6. Run a full iteration when you explicitly want screening, final generalization, or a complete rule refresh.
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\run_paper_iteration.ps1
@@ -151,6 +157,10 @@ Use the local harness and revise this paragraph.
 
 ```text
 Search the self-learning knowledge base first, then answer.
+```
+
+```text
+Use lightweight RAG with limit 3 before revising this content.
 ```
 
 ```text
