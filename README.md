@@ -1,155 +1,138 @@
 # Self-Learning Library
 
-Self-Learning Library is a local self-learning knowledge-base harness for Codex-style AI work.
+Self-Learning Library is a local-first self-learning knowledge-base harness for Codex-style AI work. It turns repeated corrections, writing rules, workflow lessons, and project memories into a layered vault that an AI assistant can retrieve before a task and improve after a task.
 
-It is not a normal note folder. It is a small operating system for reusable knowledge: the AI records useful experience, retrieves the right rules before a task, checks whether a new answer regresses against past corrections, detects conflicts, and periodically turns repeated lessons into stable rules.
+> Instead of asking your AI to remember everything, make it retrieve the right rule, avoid past regressions, and promote repeated lessons into stable knowledge.
 
-The included vault is an example exported from a real manuscript-assistance project, but the mechanism is domain-independent. You can use the same structure for coding habits, research notes, product work, lab workflows, prompt engineering, legal drafting, personal SOPs, or any other knowledge that should improve over time.
+The included vault is exported from a real manuscript-assistance workflow, but the mechanism is domain-independent. You can reuse the same structure for coding habits, research notes, product work, lab workflows, prompt engineering, legal drafting, personal SOPs, or any knowledge process that should improve over time.
 
-## What Problem It Solves
+## What It Does
 
-Large language model chats forget details, mix old and new preferences, and repeat solved mistakes. This harness makes the useful parts of past work explicit:
+Self-Learning Library gives an AI assistant a small local operating loop:
 
-- `10_Project_Change_Log`: what changed in real work.
-- `20_Paper_Memories`: reusable lessons, user preferences, corrections, and successful baselines.
-- `30_Writing_Rules`: intermediate rules extracted from memory.
-- `35_Workflow_Governance`: process rules for how the harness itself should behave.
-- `40_Final_Generalized_Rules`: stable rules that are safe to reuse.
-- `45_Supervision`: high-priority corrections and no-regression constraints.
-- `50_Conflicts`: unresolved contradictions that need human judgment.
-- `60_Limited_Rules`: useful but not-yet-general rules.
-- `70_Iterative_Thinking`: generated iteration reports, graph summaries, and latest conclusions.
+```text
+Retrieve relevant memory -> Apply rules -> Check no-regression -> Record lesson -> Promote stable rules
+```
 
-The folder names still say `paper` because this repository was extracted from a writing project. The same layers can be reused for any subject by changing the note content and, if desired, renaming the vault and constants in the scripts.
+It combines:
 
-## Core Idea
+- a layered Obsidian-compatible Markdown vault;
+- lightweight local retrieval with `tools/kb_rag.py`;
+- graph-style iteration and rule promotion with `tools/paper_iteration.py`;
+- a root harness workflow in `PROJECT_HARNESS_WORKFLOW.md`;
+- Codex-facing instructions in `AGENTS.md`;
+- a PowerShell entrypoint for full iteration.
 
-The system separates knowledge into layers:
+## Why This Exists
 
-- Evidence layer: concrete memories and change logs.
-- Reasoning layer: rules, conflicts, limits, and workflow governance.
-- Output layer: generated iteration reports and summaries.
+LLM chats often:
 
-During a chat task, the assistant should not load everything. It first uses lightweight local retrieval to find the few relevant rules. For final iteration, it reads the broader evidence graph and decides which lessons are stable, which are limited, and which conflict.
+- forget project-specific constraints;
+- repeat mistakes that were already corrected;
+- mix old preferences with newer ones;
+- over-load context with irrelevant history;
+- produce rules that are not grounded in concrete evidence;
+- fail to distinguish stable rules from limited or conflicting rules.
 
-## Current Thinking Flow
+This harness makes the useful parts of past work explicit, searchable, and promotable.
+
+## Before and After
+
+| Without the harness | With Self-Learning Library |
+| --- | --- |
+| The assistant repeats solved mistakes. | High-priority corrections become no-regression guards. |
+| Old chat context is hard to reuse. | Reusable lessons become file-backed memories and rules. |
+| Every task loads too much background. | Lightweight RAG retrieves only a few relevant notes. |
+| Rules are mixed with evidence and opinions. | The vault separates evidence, reasoning, stable rules, limited rules, and conflicts. |
+| Knowledge improves only inside one conversation. | Repeated lessons can be promoted into long-term rules. |
+
+## Knowledge Layers
+
+| Layer | Path | Purpose |
+| --- | --- | --- |
+| Index | `00_Index.md` | Entry point for the vault |
+| Change log | `10_Project_Change_Log/` | Concrete changes made during real work |
+| Memories | `20_Paper_Memories/` | Reusable lessons, user preferences, corrections, and baselines |
+| Intermediate rules | `30_Writing_Rules/` | Rules extracted from memory but not always final |
+| Workflow governance | `35_Workflow_Governance/` | Rules about how the harness itself should behave |
+| Final rules | `40_Final_Generalized_Rules/` | Stable rules that are safe to reuse |
+| Supervision | `45_Supervision/` | High-priority corrections and no-regression constraints |
+| Conflicts | `50_Conflicts/` | Contradictions that need human judgment |
+| Limited rules | `60_Limited_Rules/` | Useful rules that are scoped or not yet general |
+| Iterative thinking | `70_Iterative_Thinking/` | Generated reports, graph summaries, and latest conclusions |
+
+The folder names still say `paper` because this repository was extracted from a writing project. The reusable part is the layered learning pattern.
+
+## Thinking Flow
 
 ```mermaid
 flowchart TD
-    A["User asks a task in chat"] --> B["Read AGENTS.md and PROJECT_HARNESS_WORKFLOW.md"]
+    A["User asks a task"] --> B["Read AGENTS.md and PROJECT_HARNESS_WORKFLOW.md"]
     B --> C{"Does the task trigger the harness?"}
     C -- "No" --> D["Answer normally"]
     C -- "Yes" --> E["Run lightweight local RAG with tools/kb_rag.py"]
     E --> F["Retrieve relevant supervision, final rules, conflicts, limited rules, and intermediate rules"]
     F --> G["Build a short task checklist"]
     G --> H["Do the requested work or draft the proposed content"]
-    H --> I["No-regression guard checks against user corrections and high-priority rules"]
+    H --> I["Run no-regression checks against high-priority corrections"]
     I --> J{"Need to write into a controlled file?"}
     J -- "Yes" --> K["Show proposed content in chat first and wait for confirmation"]
     J -- "No" --> L["Continue locally"]
     K --> M["After confirmation, write file changes"]
     L --> N["Collect reusable lessons into 10 -> 20 -> 30 when applicable"]
     M --> N
-    N --> O{"User requested iteration, screening, or final generalization?"}
-    O -- "No" --> P["Run root harness entrypoint if required and report result"]
+    N --> O{"User requested iteration or final generalization?"}
+    O -- "No" --> P["Report result"]
     O -- "Yes" --> Q["Run run_paper_iteration.ps1"]
     Q --> R["Build evidence graph from vault notes and wikilinks"]
-    R --> S["Promote stable rules to 40, unresolved conflicts to 50, limited rules to 60"]
+    R --> S["Promote stable rules, limited rules, and conflicts"]
     S --> T["Write latest reports to 70_Iterative_Thinking"]
-    T --> U["Report stable rules, limited rules, governance rules, evidence strength, conflicts, and next action"]
 ```
 
-## Repository Layout
+## Quick Start
 
-```text
-.
-├── AGENTS.md
-├── PROJECT_HARNESS_WORKFLOW.md
-├── run_paper_iteration.ps1
-├── tools/
-│   ├── kb_rag.py
-│   └── paper_iteration.py
-└── paper_writing_obsidian_vault/
-    ├── 00_Index.md
-    ├── 10_Project_Change_Log/
-    ├── 20_Paper_Memories/
-    ├── 30_Writing_Rules/
-    ├── 35_Workflow_Governance/
-    ├── 40_Final_Generalized_Rules/
-    ├── 45_Supervision/
-    ├── 50_Conflicts/
-    ├── 60_Limited_Rules/
-    └── 70_Iterative_Thinking/
-```
-
-## How To Configure
-
-1. Clone the repository.
+Clone the repository:
 
 ```powershell
 git clone https://github.com/LLK-LL/Self-Learning-Library.git
 cd Self-Learning-Library
 ```
 
-2. Install Python 3.10 or newer.
+On Windows, enable Git long paths before cloning and prefer a short local path such as `C:\dev\Self-Learning-Library`. The included Obsidian vault contains descriptive note filenames that can exceed the legacy Windows path limit when the repository is nested deeply.
 
-No third-party Python packages are required for the included scripts.
-
-3. Keep the root files visible to your AI coding/chat agent.
-
-The important files are:
-
-- `AGENTS.md`: tells the agent when and how to use the harness.
-- `PROJECT_HARNESS_WORKFLOW.md`: defines the workflow, retrieval order, rule priority, no-regression guard, and collection process.
-- `run_paper_iteration.ps1`: root entrypoint for full iteration.
-- `tools/kb_rag.py`: lightweight local rule retrieval.
-- `tools/paper_iteration.py`: full graph-based iteration and rule promotion.
-
-4. Optional: rename the vault for your domain.
-
-The current vault name is:
-
-```text
-paper_writing_obsidian_vault
+```powershell
+git config --global core.longpaths true
 ```
 
-For another domain, you can either keep the name and replace the notes, or rename it and update the vault constants in:
+Install Python 3.10 or newer. The included scripts use the Python standard library.
 
-```text
-tools/kb_rag.py
-tools/paper_iteration.py
-PROJECT_HARNESS_WORKFLOW.md
-```
-
-5. Run a token-saving local retrieval test for ordinary content work.
+Run lightweight retrieval for an ordinary task:
 
 ```powershell
 py tools\kb_rag.py --query "revise introduction with mentor feedback" --limit 3
 ```
 
-For ordinary writing or content tasks, do not add `--include-workflow`, `--include-evidence`, or `--include-related`. Do not load `70_Iterative_Thinking` as normal task context. Use workflow retrieval only for workflow/governance questions:
+Run workflow/governance retrieval only when the task is about process:
 
 ```powershell
 py tools\kb_rag.py --query "how should the system apply rules before a task" --include-workflow
 ```
 
-6. Run a full iteration when you explicitly want screening, final generalization, or a complete rule refresh.
+Run a full iteration when you explicitly want screening, final generalization, or a complete rule refresh:
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\run_paper_iteration.ps1
 ```
 
-The latest output appears in:
+The latest reports appear in:
 
 ```text
 paper_writing_obsidian_vault/70_Iterative_Thinking/
 ```
 
-## How To Use It In Chat
+## Chat Commands
 
-Put this repository in the workspace used by your AI assistant. Then ask normally, but make your intent explicit when you want memory or iteration.
-
-Useful chat commands:
+Use these with a Codex-style assistant in this repository:
 
 ```text
 Use the local harness and revise this paragraph.
@@ -175,41 +158,80 @@ Run a self-iteration and tell me what rules became stable, limited, or conflicti
 Before writing into the document, show me the proposed replacement text in chat.
 ```
 
+## Examples
+
+- [Build a domain-specific vault](examples/domain-vault-adaptation.md)
+- [Use lightweight retrieval before a task](examples/lightweight-rag.md)
+- [Run a full rule iteration](examples/full-iteration.md)
+- [No-regression guard pattern](examples/no-regression-guard.md)
+
+## Repository Layout
+
 ```text
-Use the no-regression guard before finalizing this change.
+.
+├── AGENTS.md
+├── PROJECT_HARNESS_WORKFLOW.md
+├── run_paper_iteration.ps1
+├── tools/
+│   ├── kb_rag.py
+│   └── paper_iteration.py
+└── paper_writing_obsidian_vault/
+    ├── 00_Index.md
+    ├── 10_Project_Change_Log/
+    ├── 20_Paper_Memories/
+    ├── 30_Writing_Rules/
+    ├── 35_Workflow_Governance/
+    ├── 40_Final_Generalized_Rules/
+    ├── 45_Supervision/
+    ├── 50_Conflicts/
+    ├── 60_Limited_Rules/
+    └── 70_Iterative_Thinking/
 ```
 
-## Recommended Agent Behavior
+## Adapt It To Your Own Domain
 
-When a task triggers the harness, the assistant should:
+To use this outside paper writing, replace or rewrite notes under:
 
-1. Retrieve relevant rules with `tools/kb_rag.py`.
-2. Convert retrieved rules into a short checklist.
-3. Do the requested work.
-4. Check for regressions against high-priority corrections.
-5. Collect reusable process into `10 -> 20 -> 30` when applicable.
-6. Run `run_paper_iteration.ps1` when the user asks for iteration, screening, or final generalization.
-7. Report what changed and what remains unresolved.
+- `10_Project_Change_Log/`: concrete task history;
+- `20_Paper_Memories/`: reusable memories;
+- `30_Writing_Rules/`: intermediate rules;
+- `40_Final_Generalized_Rules/`: stable rules;
+- `45_Supervision/`: high-priority corrections.
 
-## What To Replace For Your Own Domain
+You can keep the current vault name or rename it and update constants in:
 
-To adapt this repository, replace or rewrite notes under:
-
-- `10_Project_Change_Log`: your concrete task history.
-- `20_Paper_Memories`: your reusable memories.
-- `30_Writing_Rules`: intermediate rules.
-- `40_Final_Generalized_Rules`: stable rules.
-- `45_Supervision`: high-priority corrections.
-
-The harness does not require the knowledge to be about papers. The layer design is the reusable part.
+- `tools/kb_rag.py`
+- `tools/paper_iteration.py`
+- `PROJECT_HARNESS_WORKFLOW.md`
 
 ## Safety Notes
 
-- Do not upload private documents, unpublished manuscripts, credentials, or raw chat logs unless you intend them to be public.
-- Keep workflow rules separate from content rules. A rule about how the system should check work should not be inserted into the output content.
-- Treat final generalized rules as stable only when they are supported by evidence notes.
-- Keep unresolved contradictions in `50_Conflicts` instead of forcing a false rule.
+- Do not upload private documents, unpublished manuscripts, credentials, raw chat logs, or personal data unless you intend them to be public.
+- Keep workflow rules separate from content rules.
+- Treat final generalized rules as stable only when supported by evidence notes.
+- Keep unresolved contradictions in `50_Conflicts/` instead of forcing a false rule.
+- Review the included vault before using it as a public template.
+
+See [Security and publishing](docs/security-and-publishing.md).
 
 ## Project Status
 
-This repository is an extracted working prototype. The current scripts are intentionally simple and local-first. They use Markdown files, JSON reports, wikilinks, and Python standard-library parsing instead of a server or database.
+Self-Learning Library is an extracted working prototype. The current scripts are intentionally simple and local-first. They use Markdown files, JSON reports, wikilinks, and Python standard-library parsing instead of a server or database.
+
+## Roadmap
+
+- Add a clean demo vault with synthetic examples.
+- Add macOS/Linux convenience scripts.
+- Add tests for retrieval ranking and rule promotion.
+- Add templates for coding, research, product, and lab-work domains.
+- Add a short demo GIF or screenshot walkthrough.
+
+## Contributing
+
+Contributions are welcome when they keep the project local-first, inspectable, and evidence-grounded. Good contributions include new domain templates, safer publishing guidance, retrieval improvements, tests, and clear workflow examples.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## One-Sentence Summary
+
+**Self-Learning Library is a local self-learning knowledge-base harness that helps AI assistants retrieve relevant rules, avoid repeated mistakes, and promote repeated lessons into stable reusable knowledge.**
