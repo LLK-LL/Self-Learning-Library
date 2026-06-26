@@ -1,6 +1,6 @@
 ﻿---
 title: Method description should serve the research purpose
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - G2
   - layer/reasoning
@@ -24,10 +24,10 @@ Method descriptions in abstracts and introductions should be scoped to the resea
 - [[Keyword selection rule - method object morphology mechanism process]]
 - [[Mentor R01 introduction revision logic and advantages]]
 - [[Mentor feedback - abstract framing and priority rule]]
+- [[Mentor-level literature summaries require accurate elegant varied expression]]
 - [[Before creating scripts retrieve and reuse local scripts]]
 - [[Introduction polishing must preserve causal transition structures]]
 - [[Reference-format Word generation must clone and compare reference DOCX]]
-- [[Theory formula descriptions require textual connectors and formatted indices]]
 
 ## Reuse Test
 

@@ -1,6 +1,6 @@
 ﻿---
 title: Process governance must not become manuscript requirements
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - G7
   - layer/reasoning

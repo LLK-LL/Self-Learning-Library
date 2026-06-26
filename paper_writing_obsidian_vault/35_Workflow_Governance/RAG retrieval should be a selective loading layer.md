@@ -1,6 +1,6 @@
 ﻿---
 title: RAG retrieval should be a selective loading layer
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - G8
   - layer/reasoning
@@ -26,6 +26,7 @@ RAG retrieval should shortlist relevant knowledge-base notes and reduce context 
 ## Evidence Memories
 
 - [[Before creating scripts retrieve and reuse local scripts]]
+- [[Codex RTK include should route into project harness]]
 - [[KB RAG should retrieve selectively and preserve evidence boundaries]]
 - [[Writing-time retrieval should stop at paper memories]]
 

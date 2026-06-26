@@ -1,6 +1,6 @@
 ﻿---
 title: Literature review should progress through capability and limitation
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - G3
   - final-generalized-rule
@@ -22,18 +22,18 @@ A literature review should not be a mechanical category list. It should move fro
 ## Evidence Basis
 
 - Supporting memory count: `8`
-- Mentor-priority evidence notes: `3`
+- Mentor-priority evidence notes: `6`
 
 ## Evidence Memories
 
 - [[Mentor R01 introduction revision logic and advantages]]
+- [[Mentor-level literature summaries require accurate elegant varied expression]]
+- [[Reference material markers require source-supported material names]]
 - [[User decision - interface wave and intermetallic compound dual mainline]]
 - [[User decision - supervision priority below mentor and scoped]]
+- [[User requirement - SCI paper overall section writing rules]]
 - [[Introduction numerical method naming and abstract abbreviation preference]]
 - [[Introduction revision - references and second paragraph structure]]
-- [[DOCX manuscript edits must distinguish partial drafts from full manuscript]]
-- [[Introduction experimental literature requires method plus contribution]]
-- [[Introduction final paragraph should not copy abstract contribution wording]]
 
 ## Reuse Test
 

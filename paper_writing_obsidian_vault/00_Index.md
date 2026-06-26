@@ -1,6 +1,6 @@
 ﻿---
 title: Paper writing self-growing knowledge base index
-updated: 2026-06-05 10:55
+updated: 2026-06-26 17:13
 tags:
   - index
   - layer/output
@@ -81,17 +81,37 @@ tags:
 - [[2026-06-04 unicode-encoding-issue-during-omml-rebuild]]
 - [[2026-06-04 User resolved abstract and interface wave conflicts]]
 - [[2026-06-04 Writing retrieval stops at paper memories]]
+- [[2026-06-05 editable-word-chart-figure-vml-text-fix]]
 - [[2026-06-05 hyperelastic-equation-derivation-word-generated]]
 - [[2026-06-05 hyperelastic-word-output-confirmed-clean]]
+- [[2026-06-05 johnson-cook-gruneisen-docx-unicode-garbled-fix]]
+- [[2026-06-05 memory destination wording clarified]]
+- [[2026-06-05 mentor-level literature summary expression rule added]]
 - [[2026-06-05 non-newtonian-fluid-derivation-word-generated]]
 - [[2026-06-05 non-newtonian-prose-meta-and-eta-n-italic-fix]]
+- [[2026-06-05 Paul reference material marker checked]]
 - [[2026-06-05 R01 mentor introduction review and tracked version]]
 - [[2026-06-05 supervised-non-newtonian-fluid-derivation-drafted]]
 - [[2026-06-05 supervision-priority-scope-workflow-implemented]]
+- [[2026-06-05 welding-window-curve-polished-python]]
+- [[2026-06-06 codex-rtk-knowledge-base-connection]]
+- [[2026-06-06 complete-metallographic-editable-word-annotation]]
+- [[2026-06-06 Discussion analysis contribution-result rule]]
+- [[2026-06-06 IMC temperature discussion inserted into Word]]
+- [[2026-06-06 low-token-rag-workflow-rule]]
+- [[2026-06-06 mandatory-rag-startup-rule]]
+- [[2026-06-06 metallographic-dimensions-reduced-to-reference-values]]
+- [[2026-06-06 sph-fem-professional-formula-regression-fixed]]
+- [[2026-06-16 SCI paper section structure rule added]]
+- [[2026-06-17 lsdyna-temperature-analysis-recorded]]
+- [[2026-06-26 abstract translation modifier-chain correction]]
+- [[2026-06-26 SCI English grammar mentor rules split]]
+- [[Hermes_maintenance_log]]
 - [[Paper memory synchronization convention]]
 
 ## Paper Memory Notes
 
+- [[2026-06-17 LS-DYNA temperature analysis phase-change thermal material]]
 - [[Abstract final rule - intermetallic layer thickness and distribution]]
 - [[Abstract rule - direct opening superseded version]]
 - [[Abstract rule - earlier industry background constraint]]
@@ -99,10 +119,13 @@ tags:
 - [[Abstract rule - predict layer thickness and distribution]]
 - [[Adjacent formula tables can merge in Word after BuildUp]]
 - [[Before creating scripts retrieve and reuse local scripts]]
+- [[Codex RTK include should route into project harness]]
+- [[Discussion analysis should emphasize contribution and results]]
 - [[Do not patch text inside corrupted OMML formulas]]
 - [[DOCX formula rewrite requires OMML structure check]]
 - [[DOCX manuscript edits must distinguish partial drafts from full manuscript]]
 - [[DOCX terminology unification and Windows processing pitfalls]]
+- [[Editable Word figures need native charts not unverified VML textboxes]]
 - [[Eq28 plastic work uses density inverse]]
 - [[Equation layout regression caused by two-column tables]]
 - [[Formula layout needs vertical centering and compact equations]]
@@ -117,14 +140,20 @@ tags:
 - [[Introduction revision aligned with mentor abstract dual mainline]]
 - [[KB RAG should retrieve selectively and preserve evidence boundaries]]
 - [[Keyword selection rule - method object morphology mechanism process]]
+- [[Memory destination wording should distinguish total memory from project knowledge base]]
 - [[Mentor feedback - abstract framing and priority rule]]
 - [[Mentor feedback - Chinese expression grammar and academic style]]
 - [[Mentor feedback - introduction first paragraph must stay on topic]]
 - [[Mentor R01 introduction revision logic and advantages]]
 - [[Mentor revised introduction first paragraph style rule]]
+- [[Mentor source - SCI English grammar common issues V01]]
+- [[Mentor-level literature summaries require accurate elegant varied expression]]
 - [[Paper memory export path convention]]
+- [[PowerShell-fed DOCX generators must use ASCII-safe source plus Unicode escapes]]
 - [[Professional Word formulas require post-BuildUp layout audit]]
 - [[Project harness must be visible from project root]]
+- [[Python launcher failure during figure polishing]]
+- [[Reference material markers require source-supported material names]]
 - [[Reference-format Word generation must clone and compare reference DOCX]]
 - [[Results sections should place figure lead-in at paragraph end]]
 - [[Retargeting drafts must stay source-based and mark figure changes]]
@@ -132,6 +161,8 @@ tags:
 - [[SCI-memory auto-record conversation changes and user suggestions]]
 - [[SCI-memory workflow rule - record to 10 and 40, refresh 20, iterate to 80]]
 - [[Section 4.3 retargeting should shift from process display to mechanism argument]]
+- [[Skill Promotion Candidates]]
+- [[Skill promotion governance for repeated workflows]]
 - [[SPH-FEM energy equation staged derivation]]
 - [[Supervision non-Newtonian formula Word output followed confirmed baseline]]
 - [[Temporary check translations should be literal]]
@@ -143,6 +174,7 @@ tags:
 - [[User correction - eta and n are variables in non-Newtonian formulas]]
 - [[User correction - formula objects must be checked for damaged characters and tense]]
 - [[User correction - prose formula symbols require real formatting]]
+- [[User correction - reduce overloaded adjective and noun modifier chains in SCI English]]
 - [[User correction - reference margins and mixed math run typography]]
 - [[User correction - variables italic constants and labels upright]]
 - [[User decision - abstract opening compromise]]
@@ -157,7 +189,10 @@ tags:
 - [[User preference - record format errors and fixes]]
 - [[User preference - retain only theory chapter formulas]]
 - [[User preference - use reference article as default DOCX format]]
+- [[User requirement - conclusion chapter three-part structure]]
+- [[User requirement - SCI paper overall section writing rules]]
 - [[Word COM should save professional formula DOCX through ASCII temp path]]
+- [[Word formula prose audit promoted to skill]]
 - [[Workflow governance must stay separate from paper requirements]]
 - [[Writing-time retrieval should stop at paper memories]]
 
@@ -168,6 +203,13 @@ tags:
 - [[Literature review should progress through capability and limitation]]
 - [[Experiment-simulation gaps should be expressed with variables]]
 - [[Reference upgrades must preserve sentence-level support]]
+- [[SCI paper sections should form a complete problem-method-evidence chain]]
+- [[SCI abstract should cover topic purpose method result conclusion]]
+- [[SCI introduction should use recent literature to expose gaps and route the study]]
+- [[Theoretical model section should explain equations assumptions and derivations]]
+- [[Numerical simulation section should connect model parameters to research claims]]
+- [[Discussion section should analyze mechanism comparison application and limitations]]
+- [[Conclusion section should summarize work innovation limitations and future extension]]
 - [[Numeric and abbreviation subscripts must be upright in formulas and prose]]
 - [[Abstract opening should connect application context to core relation]]
 - [[Paper framing should keep interface wave and intermetallic compound as dual mainlines]]
@@ -181,8 +223,11 @@ tags:
 - [[Project root must expose mandatory harness entrypoint]]
 - [[Before creating scripts retrieve and reuse local scripts]]
 - [[Manuscript content must be confirmed in chat before Word insertion]]
+- [[Repeated workflow knowledge may be promoted to skills]]
+- [[Word formula prose audit should run as a narrow skill]]
 - [[DOCX edit scope must be verified before manuscript changes]]
 - [[Legacy migrated - paper writing principle summary]]
+- [[Skill promotion registry]]
 
 ## Conflicts
 
@@ -192,12 +237,19 @@ tags:
 
 - [[Abstract opening should connect application context to core relation]]
 - [[Abstract opening should state object-variable-effect]]
+- [[Conclusion section should summarize work innovation limitations and future extension]]
+- [[Discussion section should analyze mechanism comparison application and limitations]]
 - [[Experiment-simulation gaps should be expressed with variables]]
 - [[Literature review should progress through capability and limitation]]
 - [[Method description should serve the research purpose]]
 - [[Numeric and abbreviation subscripts must be upright in formulas and prose]]
+- [[Numerical simulation section should connect model parameters to research claims]]
 - [[Paper framing should keep interface wave and intermetallic compound as dual mainlines]]
 - [[Reference upgrades must preserve sentence-level support]]
+- [[SCI abstract should cover topic purpose method result conclusion]]
+- [[SCI introduction should use recent literature to expose gaps and route the study]]
+- [[SCI paper sections should form a complete problem-method-evidence chain]]
+- [[Theoretical model section should explain equations assumptions and derivations]]
 
 ## Supervision Corrections
 
@@ -212,6 +264,8 @@ tags:
 - [[2026-06-04 supervised-formula-notation-test-navier-stokes]]
 - [[2026-06-05 non-newtonian-meta-prose-and-variable-italic-regression]]
 - [[2026-06-05 supervision-priority-below-mentor-scoped-above-ordinary-layers]]
+- [[2026-06-06 mandatory-rag-startup-and-repair]]
+- [[2026-06-06 SPH-FEM formula professional-format regression]]
 
 ## Active High-Priority Supervision Constraints
 
@@ -222,8 +276,10 @@ tags:
 - [[2026-06-04 eq58-eq59-omml-residual-regression]] | scope `theory-formula, global-format, file-processing`
 - [[2026-06-04 equation-layout-regression-two-column-tables]] | scope `theory-formula, global-format, file-processing`
 - [[2026-06-04 formula-number-height-and-root-cleanliness]] | scope `theory-formula, global-format, file-processing`
+- [[2026-06-06 mandatory-rag-startup-and-repair]] | scope `file-processing, knowledge-base-governance`
 - [[2026-06-05 non-newtonian-meta-prose-and-variable-italic-regression]] | scope `theory-formula, global-format`
 - [[2026-06-04 reactive-navier-stokes-reference-format-regression]] | scope `theory-formula, global-format, file-processing`
+- [[2026-06-06 SPH-FEM formula professional-format regression]] | scope `theory-formula, global-format, file-processing, knowledge-base-governance`
 - [[2026-06-04 supervised-formula-notation-test-navier-stokes]] | scope `theory-formula, global-format, file-processing`
 - [[2026-06-05 supervision-priority-below-mentor-scoped-above-ordinary-layers]] | scope `knowledge-base-governance`
 

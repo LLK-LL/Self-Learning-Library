@@ -9,9 +9,10 @@ if (-not (Test-Path -LiteralPath $script)) {
     throw "Cannot find paper iteration script at: $script"
 }
 
-$python = "C:\Users\Administrator\total-agent-memory\.venv\Scripts\python.exe"
-if (-not (Test-Path -LiteralPath $python)) {
-    $python = "py"
+$python = if ($env:SELF_LEARNING_LIBRARY_PYTHON) {
+    $env:SELF_LEARNING_LIBRARY_PYTHON
+} else {
+    "py"
 }
 
 & $python $script --root $Root

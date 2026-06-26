@@ -4,6 +4,8 @@ Self-Learning Library is a local-first self-learning knowledge-base harness for 
 
 > Instead of asking your AI to remember everything, make it retrieve the right rule, avoid past regressions, and promote repeated lessons into stable knowledge.
 
+Current release: **v0.2.0**. This version refreshes the public vault through the 2026-06-26 iteration, adds SCI English translation and paper-structure rules, and makes local RAG usable without private workstation dependencies.
+
 The included vault is exported from a real manuscript-assistance workflow, but the mechanism is domain-independent. You can reuse the same structure for coding habits, research notes, product work, lab workflows, prompt engineering, legal drafting, personal SOPs, or any knowledge process that should improve over time.
 
 ## What It Does
@@ -17,7 +19,7 @@ Retrieve relevant memory -> Apply rules -> Check no-regression -> Record lesson 
 It combines:
 
 - a layered Obsidian-compatible Markdown vault;
-- lightweight local retrieval with `tools/kb_rag.py`;
+- lightweight local retrieval with `tools/kb_rag.py`, including a built-in fallback retriever for fresh clones;
 - graph-style iteration and rule promotion with `tools/paper_iteration.py`;
 - a root harness workflow in `PROJECT_HARNESS_WORKFLOW.md`;
 - Codex-facing instructions in `AGENTS.md`;
@@ -130,6 +132,15 @@ The latest reports appear in:
 paper_writing_obsidian_vault/70_Iterative_Thinking/
 ```
 
+Optional environment variables for custom local integrations:
+
+```powershell
+$env:TOTAL_MEMORY_SRC = "C:\path\to\total-agent-memory\src"
+$env:TAM_MEMORY_DB = "C:\path\to\memory.db"
+$env:SCI_MEMORY_SKILL = "C:\path\to\SCI-memory\SKILL.md"
+$env:SELF_LEARNING_LIBRARY_PYTHON = "C:\path\to\python.exe"
+```
+
 ## Chat Commands
 
 Use these with a Codex-style assistant in this repository:
@@ -217,6 +228,8 @@ See [Security and publishing](docs/security-and-publishing.md).
 ## Project Status
 
 Self-Learning Library is an extracted working prototype. The current scripts are intentionally simple and local-first. They use Markdown files, JSON reports, wikilinks, and Python standard-library parsing instead of a server or database.
+
+See the latest release notes: [v0.2.0](docs/release-v0.2.0.md).
 
 ## Roadmap
 

@@ -1,6 +1,6 @@
 ﻿---
 title: Experiment-simulation gaps should be expressed with variables
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - G4
   - final-generalized-rule
@@ -21,12 +21,14 @@ For papers combining experiments and simulations, the gap should be stated as a 
 
 ## Evidence Basis
 
-- Supporting memory count: `2`
-- Mentor-priority evidence notes: `1`
+- Supporting memory count: `4`
+- Mentor-priority evidence notes: `3`
 
 ## Evidence Memories
 
 - [[Mentor R01 introduction revision logic and advantages]]
+- [[User correction - reduce overloaded adjective and noun modifier chains in SCI English]]
+- [[User requirement - SCI paper overall section writing rules]]
 - [[Introduction revision - references and second paragraph structure]]
 
 ## Reuse Test

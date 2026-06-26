@@ -36,8 +36,8 @@ flowchart LR
 
 ## Layer Counts
 
-- Evidence: `144` notes
-- Reasoning: `30` notes
+- Evidence: `179` notes
+- Reasoning: `42` notes
 - Output: `7` notes
 
 ## Obsidian Graph Filters

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from dataclasses import dataclass
@@ -13,7 +14,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 VAULT = ROOT / "paper_writing_obsidian_vault"
 ITER_DIR = VAULT / "70_Iterative_Thinking"
-TOTAL_MEMORY_SRC = Path(r"C:\Users\Administrator\total-agent-memory\src")
+TOTAL_MEMORY_SRC = Path(os.environ.get("TOTAL_MEMORY_SRC", ROOT / "total-agent-memory" / "src"))
 
 PAPER_LAYERS = [
     "45_Supervision",
@@ -325,9 +326,64 @@ class _SummaryStore:
 def rag_response(search_result: dict[str, Any], store: Any, *, query: str, phase: str | None, limit: int) -> dict[str, Any]:
     if str(TOTAL_MEMORY_SRC) not in sys.path:
         sys.path.insert(0, str(TOTAL_MEMORY_SRC))
-    from recall_modes import rag_response as total_memory_rag_response
+    try:
+        from recall_modes import rag_response as total_memory_rag_response
+    except ModuleNotFoundError:
+        return local_rag_response(search_result, store, query=query, phase=phase, limit=limit)
 
     return total_memory_rag_response(search_result, store, query=query, phase=phase, limit=limit)
+
+
+def local_rag_response(search_result: dict[str, Any], store: Any, *, query: str, phase: str | None, limit: int) -> dict[str, Any]:
+    candidates: list[dict[str, Any]] = []
+    for group in search_result.get("results", {}).values():
+        candidates.extend(group)
+    candidates.sort(key=lambda item: (-float(item.get("score", 0.0) or 0.0), str(item.get("path", ""))))
+    selected = candidates[: max(1, limit)]
+    ids = [int(item["id"]) for item in selected if "id" in item]
+    summaries = {row["knowledge_id"]: row["content"] for row in store.db.execute("", ids).fetchall()}
+    results: list[dict[str, Any]] = []
+    total_tokens = 0
+    for item in selected:
+        kid = int(item["id"])
+        summary = summaries.get(kid) or item.get("content", "")
+        tokens = estimate_tokens(str(summary))
+        total_tokens += tokens
+        results.append(
+            {
+                "id": kid,
+                "title": item.get("title", ""),
+                "summary": summary,
+                "summary_source": "local-summary",
+                "type": item.get("type", "note"),
+                "project": item.get("project", "paper_writing_obsidian_vault"),
+                "score": item.get("score", 0),
+                "importance": item.get("importance", "medium"),
+                "created_at": item.get("created_at", ""),
+                "related_ids": [],
+                "duplicate_count": 1,
+                "phase_match": bool(phase and f"phase:{phase}" in [str(tag).lower() for tag in item.get("tags", [])]),
+                "preference_match": False,
+                "_tokens": tokens,
+            }
+        )
+    return {
+        "query": query,
+        "mode": "local-rag",
+        "total": len(results),
+        "candidate_total": len(candidates),
+        "total_tokens": total_tokens,
+        "strategy": {
+            "retrieval": "local_lexical_graph_fallback",
+            "dedupe": "none",
+            "summary_cache": "markdown_frontmatter_summary_or_excerpt",
+            "failure_priority": False,
+            "preference_priority": False,
+            "phase": phase or "",
+            "next_step": "Open selected_files from this report when full evidence is needed.",
+        },
+        "results": results,
+    }
 
 
 def build_search_result(query: str, notes: list[Note], phase: str | None, candidate_limit: int) -> dict[str, Any]:

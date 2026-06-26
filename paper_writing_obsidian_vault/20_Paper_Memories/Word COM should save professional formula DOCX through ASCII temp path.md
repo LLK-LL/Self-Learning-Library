@@ -1,4 +1,4 @@
----
+﻿---
 title: Word COM should save professional formula DOCX through ASCII temp path
 created: 2026-06-04 22:48
 tags:
@@ -18,7 +18,7 @@ When Word COM is used to create or professionalize formulas in this project, sav
 The safer route is:
 
 1. generate and professionalize the formulas in Word;
-2. save the DOCX to a short ASCII temporary path, such as `C:\Users\Administrator\Desktop\*.tmp.docx`;
+2. save the DOCX to a short ASCII temporary path, such as `<short-ascii-temp-path>/*.tmp.docx`;
 3. close Word cleanly;
 4. move the saved file into the project directory;
 5. run the full post-BuildUp XML audit.

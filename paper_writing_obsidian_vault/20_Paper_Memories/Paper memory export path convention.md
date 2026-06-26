@@ -1,4 +1,4 @@
----
+﻿---
 title: Paper memory export path convention
 created: 2026-06-02 21:41
 tags:
@@ -21,7 +21,7 @@ tags:
 
 ## Memory Content
 
-For this manuscript/project, all paper-writing-related memory and revision process notes should also be exported under F:/Users/Administrator/Desktop/??????????????SPH-FEM??/memory_exports/paper_writing. Maintain latest Markdown/JSON exports there for later synthesis, and record concrete manuscript changes, writing preferences, reference decisions, and revision rationale.
+For this manuscript/project, all paper-writing-related memory and revision process notes should also be exported under <project-root>/memory_exports/paper_writing. Maintain latest Markdown/JSON exports there for later synthesis, and record concrete manuscript changes, writing preferences, reference decisions, and revision rationale.
 
 ## Context
 

@@ -41,11 +41,39 @@ Use these local paths:
 - `paper_writing_obsidian_vault/60_Limited_Rules`
 - `paper_writing_obsidian_vault/70_Iterative_Thinking`
 
+## Memory Destination Convention
+
+Disambiguate memory requests before any collection or knowledge-base write-back:
+
+- If the user uses unqualified wording whose meaning is `save to memory` or `write to memory` without a project qualifier, interpret that as total/global memory only, not the local paper knowledge base.
+- Route content into `paper_writing_obsidian_vault` only when the user explicitly uses wording whose meaning is `record to the project knowledge base` or `record to the paper knowledge base`, or otherwise clearly names the local project workflow/knowledge base.
+- If the user explicitly asks to add a workflow rule into the project workflow or project knowledge base, store it as workflow-governance material rather than manuscript-writing content.
+
 ## Writing Rule Application
 
 This function is automatically active whenever the harness is triggered.
 
-Use lightweight local RAG before loading rule content:
+Highest-priority RAG startup rule:
+
+- Knowledge-base retrieval must attempt local RAG first.
+- Knowledge-base retrieval must use the low-token RAG path by default: retrieve compact task-relevant summaries first, then load only the matched notes or excerpts needed for the task.
+- If RAG startup or execution fails, repair RAG before falling back to manual vault scanning.
+- Record the failure, repair method, and successful verification in the project knowledge base.
+- Current verified startup method:
+
+```powershell
+rtk powershell -NoProfile -Command "py tools\kb_rag.py --query '<query>' --limit 3"
+```
+
+- For workflow-governance lookup, use:
+
+```powershell
+rtk powershell -NoProfile -Command "py tools\kb_rag.py --query '<query>' --include-workflow --limit 3"
+```
+
+If direct `rtk py ...` fails with `No installed Python found!`, use the PowerShell-wrapped method above before treating RAG as unavailable.
+
+Use lightweight local RAG before loading rule content. The default workflow requirement is: use low-token RAG first, avoid full-vault loading by default, and expand context only when the retrieved evidence is insufficient for the requested task.
 
 1. Search `45_Supervision`, `40_Final_Generalized_Rules`, `50_Conflicts`, `60_Limited_Rules`, then `30_Writing_Rules`.
 2. Load only matched notes or excerpts when feasible.
@@ -84,6 +112,28 @@ This scope boundary is required to prevent manuscript body contamination: workfl
 This function is automatically active whenever the harness is triggered.
 
 Before closing a manuscript-writing task, verify the requested scope and check for regressions against the user's explicit constraints. For DOCX formula work, check formula text, visible prose, and run-level formatting when relevant.
+
+## Theory Formula DOCX Command Flow
+
+Use this command flow only for formula-related writing, theoretical-formula sections, theory-chapter formula explanations, or Word/DOCX mathematical symbol formatting. Do not enable it for introduction, abstract, discussion, results analysis, or ordinary prose polishing unless the user explicitly asks for formula or mathematical-symbol formatting in those sections.
+
+1. Start with the low-token RAG command:
+
+```powershell
+rtk powershell -NoProfile -Command "py tools\kb_rag.py --query 'Word公式说明 正文符号 小四 真下标 斜体正体' --limit 3"
+```
+
+Do not add `--include-related`, `--include-evidence`, or `--include-workflow` for ordinary formula-formatting tasks.
+
+2. Apply the mathematical-notation consistency capability from `vibe-paper-writing`.
+
+3. Scope the edit to the affected chapter or section and the visible formula-explanation prose. Use Word XML positioning rather than relying only on `python-docx Document.paragraphs`.
+
+4. Rebuild target formula-explanation prose at run level. Do not treat mathematical symbols as ordinary text strings.
+
+5. The script must internally audit font size, damaged characters, true Word subscript/superscript, italic/upright style, and raw text indices. The chat report should only summarize target count, error count, and output file path unless the audit fails or the user asks for run-level details.
+
+6. If the formal `manuscript.docx` is locked by Word, write a check-version DOCX first and overwrite the formal manuscript only after user confirmation.
 
 ## Manuscript Body Purity Guard
 
@@ -134,6 +184,8 @@ Required steps:
 ## Collection Workflow
 
 This function is automatically active whenever the harness is triggered.
+
+Before routing any record into the local project knowledge base, apply the memory-destination convention above.
 
 Route records as follows:
 

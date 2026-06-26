@@ -1,6 +1,6 @@
 ﻿---
 title: Mentor advice has higher priority in paper-memory reasoning
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - G0
   - layer/reasoning
@@ -32,7 +32,7 @@ When paper-writing memories conflict, explicit mentor feedback should be treated
 - [[Mentor feedback - abstract framing and priority rule]]
 - [[Mentor feedback - introduction first paragraph must stay on topic]]
 - [[Mentor revised introduction first paragraph style rule]]
-- [[User confirmed clean theory formula Word output as future basis]]
+- [[Mentor source - SCI English grammar common issues V01]]
 
 ## Governance Test
 

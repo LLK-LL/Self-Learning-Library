@@ -17,7 +17,7 @@ During the theory-chapter formula description cleanup, the local harness was not
 ## Root Cause
 
 - The mandatory harness instructions existed only under `process_files_20260604/AGENTS.md`, not in the project root.
-- The active root-level AGENTS instructions loaded by Codex only referenced `C:\Users\Administrator\.codex\RTK.md`, so the project-local harness rule was not visible as an active instruction.
+- The active root-level AGENTS instructions loaded by Codex only referenced `<codex-home>/RTK.md`, so the project-local harness rule was not visible as an active instruction.
 - The documented harness entrypoint `run_paper_iteration.ps1` did not exist in the project root.
 - The archived `process_files_20260604/run_paper_iteration.ps1` used `$PSScriptRoot\tools\paper_iteration.py`; when run from that subdirectory it incorrectly looked for `process_files_20260604/tools/paper_iteration.py`.
 

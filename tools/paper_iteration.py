@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import html
 import json
+import os
 import re
 import shutil
 import sqlite3
@@ -32,9 +33,9 @@ NON_PAPER_EXPORT_DIR = ROOT / "memory_exports" / "non_paper"
 LATEST_JSON = ITER_DIR / "conclusions_latest.json"
 CANDIDATE_RULES_JSON = ITER_DIR / "codex_candidate_rules.json"
 IMPORT_INDEX = VAULT / ".paper_memory_import_index.json"
-MEMORY_DB = Path(r"C:\Users\Administrator\.tam\memory.db")
+MEMORY_DB = Path(os.environ.get("TAM_MEMORY_DB", ROOT / ".tam" / "memory.db"))
 PROJECT_KEY = "Ti-Al explosive welding SPH-FEM analysis"
-SCI_MEMORY_SKILL = Path(r"C:\Users\Administrator\.codex\skills\SCI-memory\SKILL.md")
+SCI_MEMORY_SKILL = Path(os.environ.get("SCI_MEMORY_SKILL", ROOT / "skills" / "SCI-memory" / "SKILL.md"))
 SKILL_RULES_START = "<!-- AUTO-GENERATED FINAL RULES START -->"
 SKILL_RULES_END = "<!-- AUTO-GENERATED FINAL RULES END -->"
 
@@ -1131,6 +1132,121 @@ def build_conclusions(records: list[dict]) -> list[dict]:
             "category": "paper_writing",
         },
         {
+            "id": "G5s",
+            "title": "SCI paper sections should form a complete problem-method-evidence chain",
+            "conclusion": "An SCI manuscript should connect abstract, introduction, theoretical model, numerical simulation, discussion, and conclusion into one coherent chain: topic and unresolved problem, method and theory, simulation or experimental evidence, mechanism-level analysis, engineering implication, limitations, and future extension.",
+            "details": [
+                "Child rule: [[SCI abstract should cover topic purpose method result conclusion]].",
+                "Child rule: [[SCI introduction should use recent literature to expose gaps and route the study]].",
+                "Child rule: [[Theoretical model section should explain equations assumptions and derivations]].",
+                "Child rule: [[Numerical simulation section should connect model parameters to research claims]].",
+                "Child rule: [[Discussion section should analyze mechanism comparison application and limitations]].",
+                "Child rule: [[Conclusion section should summarize work innovation limitations and future extension]].",
+            ],
+            "predicate": lambda r: (
+                has(r, "SCI manuscript writing framework")
+                or has(r, "SCI paper overall section writing rules")
+                or (
+                    has(r, "abstract")
+                    and has(r, "theoretical model")
+                    and has(r, "numerical simulation")
+                    and has(r, "discussion")
+                    and has(r, "conclusion")
+                )
+            ),
+            "next_test": "Before drafting or revising a full SCI manuscript, check whether each major section answers one link in the chain: problem, method, evidence, mechanism, application, limitation, and conclusion.",
+            "category": "paper_writing",
+        },
+        {
+            "id": "G5s-abstract",
+            "title": "SCI abstract should cover topic purpose method result conclusion",
+            "conclusion": "An SCI abstract should cover five elements: topic, purpose, method, result, and conclusion, and each element should directly serve the central research problem.",
+            "details": [
+                "Topic: state the research field and the specific subject of the paper.",
+                "Purpose: identify the unresolved problem, limitation, or deficiency addressed by the paper.",
+                "Method: state the theoretical model, numerical method, computational method, or experimental method used.",
+                "Result: report the main findings.",
+                "Conclusion: state the conclusion obtained from numerical simulation or experiment in direct relation to the research problem.",
+                "Parent rule: [[SCI paper sections should form a complete problem-method-evidence chain]].",
+            ],
+            "predicate": lambda r: has(r, "SCI paper overall section writing rules") and has(r, "abstract"),
+            "next_test": "Check whether the abstract contains topic, purpose, method, result, and conclusion, with no generic element detached from the research problem.",
+            "category": "paper_writing",
+        },
+        {
+            "id": "G5s-introduction",
+            "title": "SCI introduction should use recent literature to expose gaps and route the study",
+            "conclusion": "An SCI introduction should use recent literature to move from research background and importance, to current methods and limitations, to this paper's objective, research content, technical route, and main conclusions.",
+            "details": [
+                "For a full literature-based introduction, search recent English SCI papers from the last five years and normally use about 10 to 15 papers.",
+                "Summarize prior methods and technical routes, then analyze their limitations and defects objectively and fairly.",
+                "Use the limitations of prior work to justify this paper's method, research content, and technical route.",
+                "Use a three-paragraph structure where appropriate: background and importance; numerical/experimental status plus limitations and novelty; research objective, main content, and main conclusions.",
+                "Parent rule: [[SCI paper sections should form a complete problem-method-evidence chain]].",
+            ],
+            "predicate": lambda r: has(r, "SCI paper overall section writing rules") and has(r, "introduction"),
+            "next_test": "Check whether the introduction has literature evidence, limitation analysis, method-route justification, and a final objective-content-conclusion paragraph.",
+            "category": "paper_writing",
+        },
+        {
+            "id": "G5s-theory",
+            "title": "Theoretical model section should explain equations assumptions and derivations",
+            "conclusion": "A theoretical model section should explain the theory, algorithm, governing equations, formulas, assumptions, derivation logic, and variable definitions used to solve the research problem.",
+            "details": [
+                "Explain the theory or algorithm used to solve the problem.",
+                "Ensure equation meaning, formula derivation, assumptions, and variable definitions are correct and internally consistent.",
+                "If the theory or algorithm is improved, explain the improvement and derivation process in detail.",
+                "Parent rule: [[SCI paper sections should form a complete problem-method-evidence chain]].",
+            ],
+            "predicate": lambda r: has(r, "SCI paper overall section writing rules") and (has(r, "theoretical model") or has(r, "equations")),
+            "next_test": "Check whether every governing equation has a clear role, correct variable definitions, valid assumptions, and a traceable derivation or source.",
+            "category": "paper_writing",
+        },
+        {
+            "id": "G5s-simulation",
+            "title": "Numerical simulation section should connect model parameters to research claims",
+            "conclusion": "A numerical simulation section should build a computational model from the theory or algorithm and extract parameters that are sufficient to explain or prove the paper's research topic.",
+            "details": [
+                "Build the numerical calculation model from the theoretical model or algorithm.",
+                "When using in-house or commercial software, make figures and curves clean, readable, and clearly annotated.",
+                "Extract parameters that explain or prove the research topic rather than merely displaying simulation output.",
+                "Parent rule: [[SCI paper sections should form a complete problem-method-evidence chain]].",
+            ],
+            "predicate": lambda r: has(r, "SCI paper overall section writing rules") and has(r, "numerical simulation"),
+            "next_test": "Check whether each simulation parameter, figure, or curve supports a stated research claim.",
+            "category": "paper_writing",
+        },
+        {
+            "id": "G5s-discussion",
+            "title": "Discussion section should analyze mechanism comparison application and limitations",
+            "conclusion": "A discussion section should analyze key parameters, mechanisms, comparisons, engineering implementation, advantages, limitations, and feasible solutions to unresolved problems.",
+            "details": [
+                "Discuss the research objective, key technical route, important physical parameters, and factors affecting numerical or experimental processes.",
+                "Analyze new methods, phenomena, and conclusions in depth, and explain the mechanism behind simulation or experimental observations.",
+                "Avoid isolated evidence by comparing with prior literature, comparing simulation with experiment where possible, or providing other cross-support.",
+                "Briefly analyze how the results may be implemented in engineering practice.",
+                "Objectively state method advantages, limitations, and feasible solutions for unresolved problems.",
+                "Parent rule: [[SCI paper sections should form a complete problem-method-evidence chain]].",
+            ],
+            "predicate": lambda r: has(r, "SCI paper overall section writing rules") and has(r, "discussion"),
+            "next_test": "Check whether the discussion covers mechanism, comparison or cross-support, application, advantages, limitations, and future solutions.",
+            "category": "paper_writing",
+        },
+        {
+            "id": "G5s-conclusion",
+            "title": "Conclusion section should summarize work innovation limitations and future extension",
+            "conclusion": "An SCI conclusion should begin with an overall summary and then use itemized conclusions to summarize the main work, innovations, advantages, limitations, applicability, and future extensions.",
+            "details": [
+                "Summarize the main work, method advantages, and key problems solved.",
+                "State the core innovation and compare its advantages with current methods while identifying possible improvements.",
+                "State remaining limitations, practical applicability, and future extensions of the theory, algorithm, or results.",
+                "Parent rule: [[SCI paper sections should form a complete problem-method-evidence chain]].",
+            ],
+            "predicate": lambda r: has(r, "SCI paper overall section writing rules") and has(r, "conclusion"),
+            "next_test": "Check whether the conclusion includes overall summary, itemized findings, innovation, limitations, application value, and future extension.",
+            "category": "paper_writing",
+        },
+        {
             "id": "G5a",
             "title": "Numeric and abbreviation subscripts must be upright in formulas and prose",
             "conclusion": "In manuscript formulas and ordinary prose, variable bodies should be italic, but numeric subscripts and subscripts that represent English abbreviations, names, or labels must be upright. This applies to displayed formulas, inline formulas, and textual symbol explanations; DOCX checks should inspect run-level formatting rather than relying on flattened plain text.",
@@ -1220,6 +1336,38 @@ def build_conclusions(records: list[dict]) -> list[dict]:
             "next_test": "Before writing revised manuscript wording into a DOCX, check whether the user has approved the chat version; if not, provide the proposed content in chat and stop before Word insertion.",
             "category": "process_governance",
         },
+        {
+            "id": "G12",
+            "title": "Repeated workflow knowledge may be promoted to skills",
+            "conclusion": "Repeated paper-workflow knowledge may be promoted into a Codex skill only when it has become a stable executable procedure. Paper-specific facts, mentor feedback, evidence notes, manuscript claims, and writing rules should remain in the local paper knowledge base.",
+            "predicate": lambda r: (
+                has(r, "skill promotion")
+                or has(r, "promoted to skill")
+                or has(r, "promote repeated workflow")
+                or has(r, "memory-to-skill")
+                or has(r, "stable executable procedure")
+                or has(r, "skill candidate")
+                or has(r, "skills define")
+                or has(r, "repeated operational flows")
+            ),
+            "next_test": "Before creating a skill, verify trigger conditions, non-use conditions, inputs, workflow, validation, failure branches, and source evidence; keep ordinary writing rules in the paper knowledge base.",
+            "category": "process_governance",
+        },
+        {
+            "id": "G13",
+            "title": "Word formula prose audit should run as a narrow skill",
+            "conclusion": "Word formula prose checks are frequent, fragile, and procedural enough to run as a narrow skill: inspect formula-neighbouring prose at run/XML level, check true subscript and superscript formatting, classify italic variables versus upright numbers or labels, remove raw notation and Greek placeholders, and prevent audit rationale from entering manuscript body text.",
+            "predicate": lambda r: (
+                has(r, "word formula prose audit")
+                or has(r, "prose formula symbols")
+                or has(r, "formula symbols in prose")
+                or has(r, "formatting rationale")
+                or (has(r, "raw underscore") and has(r, "prose"))
+                or (has(r, "run-level") and has(r, "upright") and has(r, "italic"))
+            ),
+            "next_test": "For formula-neighbouring prose, verify no raw underscore/caret notation remains, Greek placeholders are replaced, run-level subscript/superscript formatting is real, and manuscript body text contains no audit or formatting-rationale wording.",
+            "category": "process_governance",
+        },
     ]
     conclusions: list[dict] = []
     for spec in specs:
@@ -1234,6 +1382,7 @@ def build_conclusions(records: list[dict]) -> list[dict]:
                     "id": spec["id"],
                     "title": spec["title"],
                     "conclusion": spec["conclusion"],
+                    "details": spec.get("details", []),
                     "memory_evidence": [mem_ref(record) for record in evidence],
                     "next_test": spec["next_test"],
                     "category": spec["category"],
@@ -1434,6 +1583,7 @@ def build_final_rule_layers(conclusions: list[dict], conflicts: list[dict]) -> t
             "id": item["id"],
             "title": item["title"],
             "conclusion": item["conclusion"],
+            "details": item.get("details", []),
             "category": item.get("category", "process_governance"),
             "memory_evidence": item.get("memory_evidence", []),
             "next_test": item.get("next_test", ""),
@@ -1681,6 +1831,13 @@ def write_rule_notes(conclusions: list[dict]) -> None:
             "",
             item["conclusion"],
             "",
+        ]
+        if item.get("details"):
+            lines += ["## Detailed Section Rules", ""]
+            for detail in item["details"]:
+                lines.append(f"- {detail}")
+            lines.append("")
+        lines += [
             "## Evidence Memories",
             "",
         ]
@@ -1724,6 +1881,139 @@ def write_process_governance_notes(conclusions: list[dict]) -> None:
         lines += ["", "## Governance Test", "", item["next_test"], ""]
         write_utf8(PROCESS_DIR / f"{sanitize_filename(title, item['id'])}.md", "\n".join(lines))
 
+    write_skill_promotion_registry(conclusions)
+
+
+def load_skill_promotion_candidates() -> list[dict[str, str]]:
+    path = MEMORY_DIR / "Skill Promotion Candidates.md"
+    if not path.exists():
+        return []
+    rows: list[dict[str, str]] = []
+    headers: list[str] = []
+    for raw_line in read_text(path).splitlines():
+        line = raw_line.strip()
+        if not line.startswith("|") or "---" in line:
+            continue
+        cells = [cell.strip() for cell in line.strip("|").split("|")]
+        if not headers:
+            headers = cells
+            continue
+        if len(cells) != len(headers):
+            continue
+        row = dict(zip(headers, cells))
+        name = row.get("候选 Skill") or row.get("Candidate Skill") or ""
+        if name and not name.startswith("<"):
+            rows.append(row)
+    return rows
+
+
+def write_skill_promotion_registry(conclusions: list[dict]) -> None:
+    process_titles = {item["title"] for item in conclusions if not is_paper_writing_rule(item)}
+    codex_candidates = load_skill_promotion_candidates()
+    lines = [
+        frontmatter("Skill promotion registry", ["workflow-governance", "skill-promotion", "layer/reasoning"]),
+        "# Skill Promotion Registry",
+        "",
+        "This registry tracks repeated paper-workflow knowledge that may be promoted into Codex skills. It is a workflow-governance artifact, not a manuscript-writing rule layer.",
+        "",
+        "## Active Skills",
+        "",
+    ]
+    active_entries = [
+        {
+            "name": "paper-kb-governance",
+            "stage": "P3 active skill",
+            "trigger": "maintaining a paper-writing knowledge base, separating writing rules from workflow governance, auditing evidence boundaries, or deciding whether repeated paper-workflow memories should become skills",
+            "sources": [
+                "KB RAG should retrieve selectively and preserve evidence boundaries",
+                "Workflow governance must stay separate from paper requirements",
+                "Process governance must not become manuscript requirements",
+                "Repeated workflow knowledge may be promoted to skills",
+            ],
+            "validation": "ordinary manuscript-writing RAG excludes workflow governance; promotion candidates cite source notes and preserve original evidence",
+        },
+        {
+            "name": "word-formula-prose-audit",
+            "stage": "P3 active skill",
+            "trigger": "checking Word DOCX formula-neighbouring prose for true subscript/superscript runs, italic/upright symbol typography, raw notation, Greek placeholders, or formatting-rationale contamination",
+            "sources": [
+                "Formula symbols in prose must match formula typography",
+                "User correction - prose formula symbols require real formatting",
+                "User correction - do not put formatting rationale into manuscript body",
+                "Professional Word formulas require post-BuildUp layout audit",
+                "2026-06-06 SPH-FEM formula professional-format regression",
+            ],
+            "validation": "no raw underscore/caret notation remains; run-level XML confirms true subscript/superscript and italic/upright rules; manuscript body contains no audit wording",
+        },
+    ]
+    for entry in active_entries:
+        lines += [
+            f"### {entry['name']}",
+            "",
+            f"- Stage: `{entry['stage']}`",
+            f"- Trigger: {entry['trigger']}.",
+            "- Source notes:",
+        ]
+        for source in entry["sources"]:
+            lines.append(f"  - [[{source}]]")
+        lines += ["- Validation:", f"  - {entry['validation']}.", ""]
+
+    lines += [
+        "## Existing Related Skills",
+        "",
+        "### docx-omml-repair",
+        "",
+        "- Stage: `P3 active skill`",
+        "- Trigger: repairing or generating DOCX files with OMML equations, damaged math symbols, formula layout issues, or Windows Unicode encoding risks.",
+        "- Boundary:",
+        "  - use it for formula-object repair;",
+        "  - use `word-formula-prose-audit` for manuscript prose around formulas.",
+        "",
+        "## Candidate Backlog",
+        "",
+        "### project-script-reuse-before-new-script",
+        "",
+        "- Stage: `P1 promotable`",
+        "- Trigger: a project task appears to need a new helper script.",
+        "- Source notes:",
+        "  - [[Before creating scripts retrieve and reuse local scripts]]",
+        "  - [[KB RAG should retrieve selectively and preserve evidence boundaries]]",
+        "- Current decision:",
+        "  - keep as project workflow governance for now;",
+        "  - promote only if the same script-reuse flow becomes useful across multiple projects.",
+        "",
+        "## Codex Candidate Queue",
+        "",
+    ]
+    if codex_candidates:
+        lines.append("| Candidate Skill | Repeat Count | Trigger | Validation | Source Evidence |")
+        lines.append("|---|---:|---|---|---|")
+        for row in codex_candidates:
+            lines.append(
+                "| "
+                + " | ".join(
+                    [
+                        row.get("候选 Skill") or row.get("Candidate Skill") or "",
+                        row.get("重复次数") or row.get("Repeat Count") or "",
+                        row.get("触发场景") or row.get("Trigger") or "",
+                        row.get("验证方式") or row.get("Validation") or "",
+                        row.get("来源证据") or row.get("Source Evidence") or "",
+                    ]
+                )
+                + " |"
+            )
+    else:
+        lines.append("- No Codex-maintained skill candidates recorded yet.")
+    lines += [
+        "",
+        "## Current Process-Governance Source",
+        "",
+    ]
+    for title in sorted(process_titles):
+        lines.append(f"- [[{title}]]")
+    lines.append("")
+    write_utf8(PROCESS_DIR / "Skill promotion registry.md", "\n".join(lines))
+
 
 def write_final_rules(final_rules: list[dict]) -> None:
     FINAL_RULE_DIR.mkdir(parents=True, exist_ok=True)
@@ -1739,6 +2029,13 @@ def write_final_rules(final_rules: list[dict]) -> None:
             "",
             item["conclusion"],
             "",
+        ]
+        if item.get("details"):
+            lines += ["## Detailed Section Rules", ""]
+            for detail in item["details"]:
+                lines.append(f"- {detail}")
+            lines.append("")
+        lines += [
             "## Derived From Intermediate Rule",
             "",
             f"- [[{title}]]",

@@ -1,6 +1,6 @@
 ﻿---
 title: Manuscript content must be confirmed in chat before Word insertion
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - G11
   - layer/reasoning
@@ -27,6 +27,7 @@ For user-requested manuscript-content changes, Codex must first provide the prop
 
 - [[User confirmed clean theory formula Word output as future basis]]
 - [[User preference - chat first before Word insertion]]
+- [[PowerShell-fed DOCX generators must use ASCII-safe source plus Unicode escapes]]
 - [[Abstract rule - earlier industry background constraint]]
 - [[DOCX terminology unification and Windows processing pitfalls]]
 - [[Supervision non-Newtonian formula Word output followed confirmed baseline]]

@@ -1,6 +1,6 @@
 ﻿---
 title: Numeric and abbreviation subscripts must be upright in formulas and prose
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - G5a
   - layer/reasoning

@@ -1,6 +1,6 @@
 ﻿---
-title: Iteration 20260605_105543
-created: 2026-06-05 10:55
+title: Iteration 20260626_171305
+created: 2026-06-26 17:13
 tags:
   - layer/output
   - memory-grounded
@@ -23,13 +23,14 @@ tags:
 
 ## Layered Vault Graph Summary
 
-- Markdown notes: `181`
+- Markdown notes: `228`
 - Isolated notes: `7`
-- Evidence-layer isolated notes: `105`
+- Evidence-layer isolated notes: `126`
 - Latest graph analysis: [[graph_analysis_latest]]
 
 ## Current Paper Memory Notes
 
+- [[2026-06-17 LS-DYNA temperature analysis phase-change thermal material]]
 - [[Abstract final rule - intermetallic layer thickness and distribution]]
 - [[Abstract rule - direct opening superseded version]]
 - [[Abstract rule - earlier industry background constraint]]
@@ -37,10 +38,13 @@ tags:
 - [[Abstract rule - predict layer thickness and distribution]]
 - [[Adjacent formula tables can merge in Word after BuildUp]]
 - [[Before creating scripts retrieve and reuse local scripts]]
+- [[Codex RTK include should route into project harness]]
+- [[Discussion analysis should emphasize contribution and results]]
 - [[Do not patch text inside corrupted OMML formulas]]
 - [[DOCX formula rewrite requires OMML structure check]]
 - [[DOCX manuscript edits must distinguish partial drafts from full manuscript]]
 - [[DOCX terminology unification and Windows processing pitfalls]]
+- [[Editable Word figures need native charts not unverified VML textboxes]]
 - [[Eq28 plastic work uses density inverse]]
 - [[Equation layout regression caused by two-column tables]]
 - [[Formula layout needs vertical centering and compact equations]]
@@ -55,14 +59,20 @@ tags:
 - [[Introduction revision aligned with mentor abstract dual mainline]]
 - [[KB RAG should retrieve selectively and preserve evidence boundaries]]
 - [[Keyword selection rule - method object morphology mechanism process]]
+- [[Memory destination wording should distinguish total memory from project knowledge base]]
 - [[Mentor feedback - abstract framing and priority rule]]
 - [[Mentor feedback - Chinese expression grammar and academic style]]
 - [[Mentor feedback - introduction first paragraph must stay on topic]]
 - [[Mentor R01 introduction revision logic and advantages]]
 - [[Mentor revised introduction first paragraph style rule]]
+- [[Mentor source - SCI English grammar common issues V01]]
+- [[Mentor-level literature summaries require accurate elegant varied expression]]
 - [[Paper memory export path convention]]
+- [[PowerShell-fed DOCX generators must use ASCII-safe source plus Unicode escapes]]
 - [[Professional Word formulas require post-BuildUp layout audit]]
 - [[Project harness must be visible from project root]]
+- [[Python launcher failure during figure polishing]]
+- [[Reference material markers require source-supported material names]]
 - [[Reference-format Word generation must clone and compare reference DOCX]]
 - [[Results sections should place figure lead-in at paragraph end]]
 - [[Retargeting drafts must stay source-based and mark figure changes]]
@@ -70,6 +80,8 @@ tags:
 - [[SCI-memory auto-record conversation changes and user suggestions]]
 - [[SCI-memory workflow rule - record to 10 and 40, refresh 20, iterate to 80]]
 - [[Section 4.3 retargeting should shift from process display to mechanism argument]]
+- [[Skill Promotion Candidates]]
+- [[Skill promotion governance for repeated workflows]]
 - [[SPH-FEM energy equation staged derivation]]
 - [[Supervision non-Newtonian formula Word output followed confirmed baseline]]
 - [[Temporary check translations should be literal]]
@@ -81,6 +93,7 @@ tags:
 - [[User correction - eta and n are variables in non-Newtonian formulas]]
 - [[User correction - formula objects must be checked for damaged characters and tense]]
 - [[User correction - prose formula symbols require real formatting]]
+- [[User correction - reduce overloaded adjective and noun modifier chains in SCI English]]
 - [[User correction - reference margins and mixed math run typography]]
 - [[User correction - variables italic constants and labels upright]]
 - [[User decision - abstract opening compromise]]
@@ -95,7 +108,10 @@ tags:
 - [[User preference - record format errors and fixes]]
 - [[User preference - retain only theory chapter formulas]]
 - [[User preference - use reference article as default DOCX format]]
+- [[User requirement - conclusion chapter three-part structure]]
+- [[User requirement - SCI paper overall section writing rules]]
 - [[Word COM should save professional formula DOCX through ASCII temp path]]
+- [[Word formula prose audit promoted to skill]]
 - [[Workflow governance must stay separate from paper requirements]]
 - [[Writing-time retrieval should stop at paper memories]]
 
@@ -112,8 +128,10 @@ tags:
 - [[2026-06-04 eq58-eq59-omml-residual-regression]] | priority `user_supervision_correction` | scope `theory-formula, global-format, file-processing` | score `240`
 - [[2026-06-04 equation-layout-regression-two-column-tables]] | priority `user_supervision_correction` | scope `theory-formula, global-format, file-processing` | score `240`
 - [[2026-06-04 formula-number-height-and-root-cleanliness]] | priority `user_supervision_correction` | scope `theory-formula, global-format, file-processing` | score `240`
+- [[2026-06-06 mandatory-rag-startup-and-repair]] | priority `highest` | scope `file-processing, knowledge-base-governance` | score `240`
 - [[2026-06-05 non-newtonian-meta-prose-and-variable-italic-regression]] | priority `supervision_high` | scope `theory-formula, global-format` | score `240`
 - [[2026-06-04 reactive-navier-stokes-reference-format-regression]] | priority `supervision_high` | scope `theory-formula, global-format, file-processing` | score `240`
+- [[2026-06-06 SPH-FEM formula professional-format regression]] | priority `user_supervision_correction` | scope `theory-formula, global-format, file-processing, knowledge-base-governance` | score `240`
 - [[2026-06-04 supervised-formula-notation-test-navier-stokes]] | priority `supervision_high` | scope `theory-formula, global-format, file-processing` | score `240`
 - [[2026-06-05 supervision-priority-below-mentor-scoped-above-ordinary-layers]] | priority `supervision_high` | scope `knowledge-base-governance` | score `240`
 
@@ -133,8 +151,8 @@ Across domains, an abstract should start from the study object, the key variable
 
 **Graph Support**
 
-- Evidence relation score: `5`
-- Mentor-priority evidence notes: `7`
+- Evidence relation score: `6`
+- Mentor-priority evidence notes: `8`
 - Reasoning/output nodes excluded from support score.
 
 **Memory Evidence**
@@ -164,21 +182,29 @@ Across domains, an abstract should start from the study object, the key variable
 
 - 开头更有工程背景：先放到“TC4/Al6061复合轻装甲板”的应用场景中，使读者立即理解界面问题与结合强度、抗冲击性能之间的关系。
 - 研究对象更完整：将“界面波形成过程”和
-- [[User decision - abstract opening compromise]] priority `user_decision`: The user resolved the abstract first-sentence framing conflict by choosing the compromise option. The abstract opening may include the application context, but it must immediately connect to the core research relation. It should not remain 
-- [[User decision - interface wave and intermetallic compound dual mainline]] priority `user_decision`: The user resolved the role-of-interface-wave conflict by choosing a dual-mainline framing: interface wave formation process prediction plus intermetallic compound scale prediction. Future abstract, introduction, and rule iteration should tr
-- [[User decision - supervision priority below mentor and scoped]] priority `user_high`: ---
-title: User decision - supervision priority below mentor and scoped
-created: 2026-06-05 00:55
+- [[Mentor-level literature summaries require accurate elegant varied expression]] priority `mentor_high`: ---
+title: Mentor-level literature summaries require accurate elegant varied expression
+created: 2026-06-05 11:15
 tags:
+  - introduction
+  - layer/evidence
+  - literature-review
+  - mentor-feedback
+source: user_supplement_for_mentor_rule
+so
+- [[User correction - reduce overloaded adjective and noun modifier chains in SCI English]] priority `user_high`: ---
+title: User correction - reduce overloaded adjective and noun modifier chains in SCI English
+created: 2026-06-26
+tags:
+  - English-translation
   - layer/evidence
   - paper-memory
-  - priority
-  - scope
-  - supervision
-source: user_decision
-source_priority: user_high
-status: acti
-- [[Introduction numerical method naming and abstract abbreviation preference]]: When mentioning numerical methods in the introduction, do not add dimensional qualifiers unless the dimension itself is the point being argued. For example, write `SPH-FEM` instead of `two-dimensional SPH-FEM` or `2D SPH-FEM` in the introdu
+  - readability
+  - sentence-polish
+  - user-correction
+s
+- [[User decision - abstract opening compromise]] priority `user_decision`: The user resolved the abstract first-sentence framing conflict by choosing the compromise option. The abstract opening may include the application context, but it must immediately connect to the core research relation. It should not remain
+- [[User decision - interface wave and intermetallic compound dual mainline]] priority `user_decision`: The user resolved the role-of-interface-wave conflict by choosing a dual-mainline framing: interface wave formation process prediction plus intermetallic compound scale prediction. Future abstract, introduction, and rule iteration should tr
 
 **Next Test**
 
@@ -194,7 +220,7 @@ Method descriptions in abstracts and introductions should be scoped to the resea
 
 **Graph Support**
 
-- Evidence relation score: `5`
+- Evidence relation score: `4`
 - Mentor-priority evidence notes: `8`
 - Reasoning/output nodes excluded from support score.
 
@@ -234,6 +260,16 @@ statu
 
 - 开头更有工程背景：先放到“TC4/Al6061复合轻装甲板”的应用场景中，使读者立即理解界面问题与结合强度、抗冲击性能之间的关系。
 - 研究对象更完整：将“界面波形成过程”和
+- [[Mentor-level literature summaries require accurate elegant varied expression]] priority `mentor_high`: ---
+title: Mentor-level literature summaries require accurate elegant varied expression
+created: 2026-06-05 11:15
+tags:
+  - introduction
+  - layer/evidence
+  - literature-review
+  - mentor-feedback
+source: user_supplement_for_mentor_rule
+so
 - [[Before creating scripts retrieve and reuse local scripts]] priority `user_high`: ---
 title: Before creating scripts retrieve and reuse local scripts
 created: 2026-06-04 19:44
@@ -268,19 +304,6 @@ tags:
 source: user_correction
 priority: user_high
 
-- [[Theory formula descriptions require textual connectors and formatted indices]] priority `user_high`: ---
-title: Theory formula descriptions require textual connectors and formatted indices
-created: 2026-06-04 19:30
-tags:
-  - docx
-  - formula-notation
-  - layer/evidence
-  - user-preference
-source: user_correction
-priority: user_high
----
-
-# 
 
 **Next Test**
 
@@ -293,6 +316,88 @@ Compress method sentences to method name, analysis object, and inference target.
 - Similarity: `1.0`
 
 A literature review should not be a mechanical category list. It should move from what prior work can do, to what remains missing, to why the next method is needed, and finally to the remaining gap addressed by the paper.
+
+**Graph Support**
+
+- Evidence relation score: `3`
+- Mentor-priority evidence notes: `6`
+- Reasoning/output nodes excluded from support score.
+
+**Memory Evidence**
+
+- [[Mentor R01 introduction revision logic and advantages]] priority `mentor_high`: ---
+title: Mentor R01 introduction revision logic and advantages
+created: 2026-06-05 10:55
+tags:
+  - introduction
+  - layer/evidence
+  - mentor-feedback
+  - source/mentor
+source: mentor
+source_priority: mentor_high
+scope: introduction
+statu
+- [[Mentor-level literature summaries require accurate elegant varied expression]] priority `mentor_high`: ---
+title: Mentor-level literature summaries require accurate elegant varied expression
+created: 2026-06-05 11:15
+tags:
+  - introduction
+  - layer/evidence
+  - literature-review
+  - mentor-feedback
+source: user_supplement_for_mentor_rule
+so
+- [[Reference material markers require source-supported material names]] priority `user_high`: ---
+title: Reference material markers require source-supported material names
+created: 2026-06-05 11:08
+tags:
+  - introduction
+  - layer/evidence
+  - reference-check
+status: active
+scope: introduction, reference-check
+source: user_task
+sour
+- [[User decision - interface wave and intermetallic compound dual mainline]] priority `user_decision`: The user resolved the role-of-interface-wave conflict by choosing a dual-mainline framing: interface wave formation process prediction plus intermetallic compound scale prediction. Future abstract, introduction, and rule iteration should tr
+- [[User decision - supervision priority below mentor and scoped]] priority `user_high`: ---
+title: User decision - supervision priority below mentor and scoped
+created: 2026-06-05 00:55
+tags:
+  - layer/evidence
+  - paper-memory
+  - priority
+  - scope
+  - supervision
+source: user_decision
+source_priority: user_high
+status: acti
+- [[User requirement - SCI paper overall section writing rules]] priority `user_high`: ---
+title: User requirement - SCI paper overall section writing rules
+created: 2026-06-16
+tags:
+  - layer/evidence
+  - paper-memory
+  - structure
+  - writing-rule
+source: user_instruction
+source_priority: user_high
+---
+
+# User requirement -
+- [[Introduction numerical method naming and abstract abbreviation preference]]: When mentioning numerical methods in the introduction, do not add dimensional qualifiers unless the dimension itself is the point being argued. For example, write `SPH-FEM` instead of `two-dimensional SPH-FEM` or `2D SPH-FEM` in the introdu
+- [[Introduction revision - references and second paragraph structure]]: Paper revision process recorded on 2026-06-01: updated the introduction first paragraph references in manuscript_intro_p1_q1_refs.docx, replacing references [1]-[17] with recent SCI/JCR Q1-oriented literature where possible; kept the origin
+
+**Next Test**
+
+Mark each review sentence as capability, limitation, transition, or remaining gap.
+
+### G4 Experiment-simulation gaps should be expressed with variables
+
+- Status: `unchanged`
+- Closest previous: `G4`
+- Similarity: `1.0`
+
+For papers combining experiments and simulations, the gap should be stated as a missing bridge between observable experimental variables and simulated variables.
 
 **Graph Support**
 
@@ -314,89 +419,30 @@ source: mentor
 source_priority: mentor_high
 scope: introduction
 statu
-- [[User decision - interface wave and intermetallic compound dual mainline]] priority `user_decision`: The user resolved the role-of-interface-wave conflict by choosing a dual-mainline framing: interface wave formation process prediction plus intermetallic compound scale prediction. Future abstract, introduction, and rule iteration should tr
-- [[User decision - supervision priority below mentor and scoped]] priority `user_high`: ---
-title: User decision - supervision priority below mentor and scoped
-created: 2026-06-05 00:55
+- [[User correction - reduce overloaded adjective and noun modifier chains in SCI English]] priority `user_high`: ---
+title: User correction - reduce overloaded adjective and noun modifier chains in SCI English
+created: 2026-06-26
+tags:
+  - English-translation
+  - layer/evidence
+  - paper-memory
+  - readability
+  - sentence-polish
+  - user-correction
+s
+- [[User requirement - SCI paper overall section writing rules]] priority `user_high`: ---
+title: User requirement - SCI paper overall section writing rules
+created: 2026-06-16
 tags:
   - layer/evidence
   - paper-memory
-  - priority
-  - scope
-  - supervision
-source: user_decision
+  - structure
+  - writing-rule
+source: user_instruction
 source_priority: user_high
-status: acti
-- [[Introduction numerical method naming and abstract abbreviation preference]]: When mentioning numerical methods in the introduction, do not add dimensional qualifiers unless the dimension itself is the point being argued. For example, write `SPH-FEM` instead of `two-dimensional SPH-FEM` or `2D SPH-FEM` in the introdu
-- [[Introduction revision - references and second paragraph structure]]: Paper revision process recorded on 2026-06-01: updated the introduction first paragraph references in manuscript_intro_p1_q1_refs.docx, replacing references [1]-[17] with recent SCI/JCR Q1-oriented literature where possible; kept the origin
-- [[DOCX manuscript edits must distinguish partial drafts from full manuscript]]: ---
-title: DOCX manuscript edits must distinguish partial drafts from full manuscript
-created: 2026-06-03 21:20
-tags:
-  - docx
-  - layer/evidence
-  - manuscript
-  - no-regression
-  - paper-memory
 ---
 
-# DOCX manuscript edits must distinguis
-- [[Introduction experimental literature requires method plus contribution]]: ---
-title: Introduction experimental literature requires method plus contribution
-created: 2026-06-03 21:14
-tags:
-  - introduction
-  - layer/evidence
-  - literature-review
-  - paper-memory
----
-
-# Introduction experimental literature require
-- [[Introduction final paragraph should not copy abstract contribution wording]]: ---
-title: Introduction final paragraph should not copy abstract contribution wording
-created: 2026-06-03 22:25
-tags:
-  - abstract
-  - introduction
-  - layer/evidence
-  - paper-memory
-  - phrasing
----
-
-# Introduction final paragraph should 
-
-**Next Test**
-
-Mark each review sentence as capability, limitation, transition, or remaining gap.
-
-### G4 Experiment-simulation gaps should be expressed with variables
-
-- Status: `unchanged`
-- Closest previous: `G4`
-- Similarity: `1.0`
-
-For papers combining experiments and simulations, the gap should be stated as a missing bridge between observable experimental variables and simulated variables.
-
-**Graph Support**
-
-- Evidence relation score: `2`
-- Mentor-priority evidence notes: `1`
-- Reasoning/output nodes excluded from support score.
-
-**Memory Evidence**
-
-- [[Mentor R01 introduction revision logic and advantages]] priority `mentor_high`: ---
-title: Mentor R01 introduction revision logic and advantages
-created: 2026-06-05 10:55
-tags:
-  - introduction
-  - layer/evidence
-  - mentor-feedback
-  - source/mentor
-source: mentor
-source_priority: mentor_high
-scope: introduction
-statu
+# User requirement -
 - [[Introduction revision - references and second paragraph structure]]: Paper revision process recorded on 2026-06-01: updated the introduction first paragraph references in manuscript_intro_p1_q1_refs.docx, replacing references [1]-[17] with recent SCI/JCR Q1-oriented literature where possible; kept the origin
 
 **Next Test**
@@ -413,12 +459,34 @@ Newer or higher-ranked references are only better when they directly support the
 
 **Graph Support**
 
-- Evidence relation score: `6`
-- Mentor-priority evidence notes: `4`
+- Evidence relation score: `4`
+- Mentor-priority evidence notes: `8`
 - Reasoning/output nodes excluded from support score.
 
 **Memory Evidence**
 
+- [[Mentor source - SCI English grammar common issues V01]] priority `mentor_highest`: ---
+title: Mentor source - SCI English grammar common issues V01
+created: 2026-06-26
+tags:
+  - English-translation
+  - grammar
+  - layer/evidence
+  - mentor-feedback
+  - paper-memory
+  - priority/highest
+  - writing-rule
+source: mentor_docu
+- [[Mentor-level literature summaries require accurate elegant varied expression]] priority `mentor_high`: ---
+title: Mentor-level literature summaries require accurate elegant varied expression
+created: 2026-06-05 11:15
+tags:
+  - introduction
+  - layer/evidence
+  - literature-review
+  - mentor-feedback
+source: user_supplement_for_mentor_rule
+so
 - [[User confirmed clean theory formula Word output as future basis]]: ---
 title: User confirmed clean theory formula Word output as future basis
 created: 2026-06-04 23:55
@@ -433,6 +501,31 @@ source: user_confirmation
 ---
 
 # Memo
+- [[Editable Word figures need native charts not unverified VML textboxes]] priority `user_high`: ---
+title: Editable Word figures need native charts not unverified VML textboxes
+created: 2026-06-05 12:45
+tags:
+  - editable-chart
+  - figure
+  - image-related
+  - layer/evidence
+  - word
+source: user_correction
+priority: user_high
+---
+
+#
+- [[Reference material markers require source-supported material names]] priority `user_high`: ---
+title: Reference material markers require source-supported material names
+created: 2026-06-05 11:08
+tags:
+  - introduction
+  - layer/evidence
+  - reference-check
+status: active
+scope: introduction, reference-check
+source: user_task
+sour
 - [[Reference-format Word generation must clone and compare reference DOCX]] priority `user_high`: ---
 title: Reference-format Word generation must clone and compare reference DOCX
 created: 2026-06-04 21:58
@@ -457,7 +550,7 @@ source: user_correction
 priority: user_high
 ---
 
-# 
+#
 - [[User preference - chat first before Word insertion]] priority `user_high`: ---
 title: User preference - chat first before Word insertion
 created: 2026-06-04 21:08
@@ -471,15 +564,249 @@ source: user_instruction
 priority: user_high
 ---
 
-# 
-- [[Introduction numerical method naming and abstract abbreviation preference]]: When mentioning numerical methods in the introduction, do not add dimensional qualifiers unless the dimension itself is the point being argued. For example, write `SPH-FEM` instead of `two-dimensional SPH-FEM` or `2D SPH-FEM` in the introdu
-- [[Introduction revision - references and second paragraph structure]]: Paper revision process recorded on 2026-06-01: updated the introduction first paragraph references in manuscript_intro_p1_q1_refs.docx, replacing references [1]-[17] with recent SCI/JCR Q1-oriented literature where possible; kept the origin
-- [[Paper memory export path convention]]: For this manuscript/project, all paper-writing-related memory and revision process notes should also be exported under F:/Users/Administrator/Desktop/??????????????SPH-FEM??/memory_exports/paper_writing. Maintain latest Markdown/JSON export
-- [[Abstract final rule - intermetallic layer thickness and distribution]]: TC4/Al6061 abstract writing preference: start directly with the effect of intermetallic compound layer thickness and distribution on impact resistance and interface bonding strength. State the purpose as accurately predicting intermetallic 
+#
 
 **Next Test**
 
 Record sentence claim, candidate source, support relation, year, journal rank, and replacement reason.
+
+### G5s SCI paper sections should form a complete problem-method-evidence chain
+
+- Status: `unchanged`
+- Closest previous: `G5s`
+- Similarity: `1.0`
+
+An SCI manuscript should connect abstract, introduction, theoretical model, numerical simulation, discussion, and conclusion into one coherent chain: topic and unresolved problem, method and theory, simulation or experimental evidence, mechanism-level analysis, engineering implication, limitations, and future extension.
+
+**Graph Support**
+
+- Evidence relation score: `0`
+- Mentor-priority evidence notes: `1`
+- Reasoning/output nodes excluded from support score.
+
+**Memory Evidence**
+
+- [[User requirement - SCI paper overall section writing rules]] priority `user_high`: ---
+title: User requirement - SCI paper overall section writing rules
+created: 2026-06-16
+tags:
+  - layer/evidence
+  - paper-memory
+  - structure
+  - writing-rule
+source: user_instruction
+source_priority: user_high
+---
+
+# User requirement -
+
+**Next Test**
+
+Before drafting or revising a full SCI manuscript, check whether each major section answers one link in the chain: problem, method, evidence, mechanism, application, limitation, and conclusion.
+
+### G5s-abstract SCI abstract should cover topic purpose method result conclusion
+
+- Status: `unchanged`
+- Closest previous: `G5s-abstract`
+- Similarity: `1.0`
+
+An SCI abstract should cover five elements: topic, purpose, method, result, and conclusion, and each element should directly serve the central research problem.
+
+**Graph Support**
+
+- Evidence relation score: `0`
+- Mentor-priority evidence notes: `1`
+- Reasoning/output nodes excluded from support score.
+
+**Memory Evidence**
+
+- [[User requirement - SCI paper overall section writing rules]] priority `user_high`: ---
+title: User requirement - SCI paper overall section writing rules
+created: 2026-06-16
+tags:
+  - layer/evidence
+  - paper-memory
+  - structure
+  - writing-rule
+source: user_instruction
+source_priority: user_high
+---
+
+# User requirement -
+
+**Next Test**
+
+Check whether the abstract contains topic, purpose, method, result, and conclusion, with no generic element detached from the research problem.
+
+### G5s-introduction SCI introduction should use recent literature to expose gaps and route the study
+
+- Status: `unchanged`
+- Closest previous: `G5s-introduction`
+- Similarity: `1.0`
+
+An SCI introduction should use recent literature to move from research background and importance, to current methods and limitations, to this paper's objective, research content, technical route, and main conclusions.
+
+**Graph Support**
+
+- Evidence relation score: `0`
+- Mentor-priority evidence notes: `1`
+- Reasoning/output nodes excluded from support score.
+
+**Memory Evidence**
+
+- [[User requirement - SCI paper overall section writing rules]] priority `user_high`: ---
+title: User requirement - SCI paper overall section writing rules
+created: 2026-06-16
+tags:
+  - layer/evidence
+  - paper-memory
+  - structure
+  - writing-rule
+source: user_instruction
+source_priority: user_high
+---
+
+# User requirement -
+
+**Next Test**
+
+Check whether the introduction has literature evidence, limitation analysis, method-route justification, and a final objective-content-conclusion paragraph.
+
+### G5s-theory Theoretical model section should explain equations assumptions and derivations
+
+- Status: `unchanged`
+- Closest previous: `G5s-theory`
+- Similarity: `1.0`
+
+A theoretical model section should explain the theory, algorithm, governing equations, formulas, assumptions, derivation logic, and variable definitions used to solve the research problem.
+
+**Graph Support**
+
+- Evidence relation score: `0`
+- Mentor-priority evidence notes: `1`
+- Reasoning/output nodes excluded from support score.
+
+**Memory Evidence**
+
+- [[User requirement - SCI paper overall section writing rules]] priority `user_high`: ---
+title: User requirement - SCI paper overall section writing rules
+created: 2026-06-16
+tags:
+  - layer/evidence
+  - paper-memory
+  - structure
+  - writing-rule
+source: user_instruction
+source_priority: user_high
+---
+
+# User requirement -
+
+**Next Test**
+
+Check whether every governing equation has a clear role, correct variable definitions, valid assumptions, and a traceable derivation or source.
+
+### G5s-simulation Numerical simulation section should connect model parameters to research claims
+
+- Status: `unchanged`
+- Closest previous: `G5s-simulation`
+- Similarity: `1.0`
+
+A numerical simulation section should build a computational model from the theory or algorithm and extract parameters that are sufficient to explain or prove the paper's research topic.
+
+**Graph Support**
+
+- Evidence relation score: `0`
+- Mentor-priority evidence notes: `1`
+- Reasoning/output nodes excluded from support score.
+
+**Memory Evidence**
+
+- [[User requirement - SCI paper overall section writing rules]] priority `user_high`: ---
+title: User requirement - SCI paper overall section writing rules
+created: 2026-06-16
+tags:
+  - layer/evidence
+  - paper-memory
+  - structure
+  - writing-rule
+source: user_instruction
+source_priority: user_high
+---
+
+# User requirement -
+
+**Next Test**
+
+Check whether each simulation parameter, figure, or curve supports a stated research claim.
+
+### G5s-discussion Discussion section should analyze mechanism comparison application and limitations
+
+- Status: `unchanged`
+- Closest previous: `G5s-discussion`
+- Similarity: `1.0`
+
+A discussion section should analyze key parameters, mechanisms, comparisons, engineering implementation, advantages, limitations, and feasible solutions to unresolved problems.
+
+**Graph Support**
+
+- Evidence relation score: `0`
+- Mentor-priority evidence notes: `1`
+- Reasoning/output nodes excluded from support score.
+
+**Memory Evidence**
+
+- [[User requirement - SCI paper overall section writing rules]] priority `user_high`: ---
+title: User requirement - SCI paper overall section writing rules
+created: 2026-06-16
+tags:
+  - layer/evidence
+  - paper-memory
+  - structure
+  - writing-rule
+source: user_instruction
+source_priority: user_high
+---
+
+# User requirement -
+
+**Next Test**
+
+Check whether the discussion covers mechanism, comparison or cross-support, application, advantages, limitations, and future solutions.
+
+### G5s-conclusion Conclusion section should summarize work innovation limitations and future extension
+
+- Status: `unchanged`
+- Closest previous: `G5s-conclusion`
+- Similarity: `1.0`
+
+An SCI conclusion should begin with an overall summary and then use itemized conclusions to summarize the main work, innovations, advantages, limitations, applicability, and future extensions.
+
+**Graph Support**
+
+- Evidence relation score: `0`
+- Mentor-priority evidence notes: `1`
+- Reasoning/output nodes excluded from support score.
+
+**Memory Evidence**
+
+- [[User requirement - SCI paper overall section writing rules]] priority `user_high`: ---
+title: User requirement - SCI paper overall section writing rules
+created: 2026-06-16
+tags:
+  - layer/evidence
+  - paper-memory
+  - structure
+  - writing-rule
+source: user_instruction
+source_priority: user_high
+---
+
+# User requirement -
+
+**Next Test**
+
+Check whether the conclusion includes overall summary, itemized findings, innovation, limitations, application value, and future extension.
 
 ### G5a Numeric and abbreviation subscripts must be upright in formulas and prose
 
@@ -573,7 +900,7 @@ The abstract opening may begin from the application context, but it must immedia
 
 **Memory Evidence**
 
-- [[User decision - abstract opening compromise]] priority `user_decision`: The user resolved the abstract first-sentence framing conflict by choosing the compromise option. The abstract opening may include the application context, but it must immediately connect to the core research relation. It should not remain 
+- [[User decision - abstract opening compromise]] priority `user_decision`: The user resolved the abstract first-sentence framing conflict by choosing the compromise option. The abstract opening may include the application context, but it must immediately connect to the core research relation. It should not remain
 
 **Next Test**
 
@@ -613,7 +940,7 @@ Check whether the abstract and introduction preserve both mainlines and avoid wr
 ### G0 Mentor advice has higher priority in paper-memory reasoning
 
 - Status: `unchanged`
-- Evidence relation score: `3`
+- Evidence relation score: `4`
 - Supporting memory notes: `8`
 
 When paper-writing memories conflict, explicit mentor feedback should be treated as higher-weight evidence than earlier self-authored preferences. The self-thinking process should adopt the mentor rule unless later mentor feedback or a clear user override supersedes it.
@@ -625,7 +952,7 @@ Before applying a writing rule, check whether any cited memory has Source `mento
 ### G6 Writing knowledge should become reusable process memory
 
 - Status: `unchanged`
-- Evidence relation score: `3`
+- Evidence relation score: `4`
 - Supporting memory notes: `8`
 
 Paper edits should be stored as reusable process memory: problem, action, rationale, applicable context, non-applicable context, evidence, and generalized rule.
@@ -637,7 +964,7 @@ After each edit, separate the project-specific event from the reusable writing r
 ### G7 Process governance must not become manuscript requirements
 
 - Status: `unchanged`
-- Evidence relation score: `2`
+- Evidence relation score: `4`
 - Supporting memory notes: `2`
 
 Workflow, memory-management, automation, and knowledge-base maintenance rules must be kept separate from paper-writing requirements. They may guide how the knowledge base grows, but they must not be applied as claims, structure, wording, or evaluation criteria for the manuscript itself.
@@ -649,8 +976,8 @@ Before promoting any rule, label it as paper-writing or process-governance; only
 ### G8 RAG retrieval should be a selective loading layer
 
 - Status: `unchanged`
-- Evidence relation score: `2`
-- Supporting memory notes: `3`
+- Evidence relation score: `7`
+- Supporting memory notes: `4`
 
 RAG retrieval should shortlist relevant knowledge-base notes and reduce context loading. It must not replace full evidence review for final generalization, conflict resolution, or manuscript rule promotion.
 
@@ -661,8 +988,8 @@ For ordinary writing, use RAG to choose candidate notes first; for final summari
 ### G9 Project root must expose mandatory harness entrypoint
 
 - Status: `unchanged`
-- Evidence relation score: `1`
-- Supporting memory notes: `1`
+- Evidence relation score: `6`
+- Supporting memory notes: `2`
 
 The project-local harness can only be enforced reliably when root AGENTS.md contains the mandatory harness rule and root run_paper_iteration.ps1 executes tools/paper_iteration.py with the project root. Archived or subdirectory copies are not sufficient active entrypoints.
 
@@ -673,7 +1000,7 @@ Before closing any workflow-maintenance task, verify root AGENTS.md, PROJECT_HAR
 ### G10 Before creating scripts retrieve and reuse local scripts
 
 - Status: `unchanged`
-- Evidence relation score: `1`
+- Evidence relation score: `3`
 - Supporting memory notes: `2`
 
 Before creating a new helper script, Codex should use the deployed local RAG method and fast local search to find existing scripts in the project. Reuse a suitable script directly, or make a small scoped modification, when that saves tokens and avoids re-deriving tested logic. Create a new script only when no safe local candidate exists or modification would create higher regression risk.
@@ -685,14 +1012,38 @@ Before adding a new script, run local RAG plus rg-based script inventory search,
 ### G11 Manuscript content must be confirmed in chat before Word insertion
 
 - Status: `unchanged`
-- Evidence relation score: `2`
-- Supporting memory notes: `6`
+- Evidence relation score: `4`
+- Supporting memory notes: `7`
 
 For user-requested manuscript-content changes, Codex must first provide the proposed revised content in chat and wait for user confirmation before writing that content into Word. This guards against unwanted DOCX edits while still allowing file inspection, formatting checks, RAG, and knowledge-base maintenance before confirmation.
 
 **Governance Test**
 
 Before writing revised manuscript wording into a DOCX, check whether the user has approved the chat version; if not, provide the proposed content in chat and stop before Word insertion.
+
+### G12 Repeated workflow knowledge may be promoted to skills
+
+- Status: `unchanged`
+- Evidence relation score: `0`
+- Supporting memory notes: `2`
+
+Repeated paper-workflow knowledge may be promoted into a Codex skill only when it has become a stable executable procedure. Paper-specific facts, mentor feedback, evidence notes, manuscript claims, and writing rules should remain in the local paper knowledge base.
+
+**Governance Test**
+
+Before creating a skill, verify trigger conditions, non-use conditions, inputs, workflow, validation, failure branches, and source evidence; keep ordinary writing rules in the paper knowledge base.
+
+### G13 Word formula prose audit should run as a narrow skill
+
+- Status: `unchanged`
+- Evidence relation score: `1`
+- Supporting memory notes: `7`
+
+Word formula prose checks are frequent, fragile, and procedural enough to run as a narrow skill: inspect formula-neighbouring prose at run/XML level, check true subscript and superscript formatting, classify italic variables versus upright numbers or labels, remove raw notation and Greek placeholders, and prevent audit rationale from entering manuscript body text.
+
+**Governance Test**
+
+For formula-neighbouring prose, verify no raw underscore/caret notation remains, Greek placeholders are replaced, run-level subscript/superscript formatting is real, and manuscript body text contains no audit or formatting-rationale wording.
 
 ### C1 DOCX edit scope must be verified before manuscript changes
 
@@ -716,6 +1067,13 @@ Before a DOCX edit, record the target file scope as full manuscript or partial d
 - [[Literature review should progress through capability and limitation]] | category `paper_writing`
 - [[Experiment-simulation gaps should be expressed with variables]] | category `paper_writing`
 - [[Reference upgrades must preserve sentence-level support]] | category `paper_writing`
+- [[SCI paper sections should form a complete problem-method-evidence chain]] | category `paper_writing`
+- [[SCI abstract should cover topic purpose method result conclusion]] | category `paper_writing`
+- [[SCI introduction should use recent literature to expose gaps and route the study]] | category `paper_writing`
+- [[Theoretical model section should explain equations assumptions and derivations]] | category `paper_writing`
+- [[Numerical simulation section should connect model parameters to research claims]] | category `paper_writing`
+- [[Discussion section should analyze mechanism comparison application and limitations]] | category `paper_writing`
+- [[Conclusion section should summarize work innovation limitations and future extension]] | category `paper_writing`
 - [[Numeric and abbreviation subscripts must be upright in formulas and prose]] | category `paper_writing`
 - [[Abstract opening should connect application context to core relation]] | category `paper_writing`
 - [[Paper framing should keep interface wave and intermetallic compound as dual mainlines]] | category `paper_writing`
@@ -725,10 +1083,20 @@ Before a DOCX edit, record the target file scope as full manuscript or partial d
 
 ## Workspace Evidence Manifest
 
-- `AGENTS.md` | chars `2317` | sha256 `29ca46c47a06`
-- `CHANGELOG.md` | chars `286` | sha256 `2229be3ae14d`
+- `.github\ISSUE_TEMPLATE\bug_report.md` | chars `565` | sha256 `e148e3c60ab3`
+- `.github\ISSUE_TEMPLATE\domain-template.md` | chars `578` | sha256 `e7db51eb68b6`
+- `.github\PULL_REQUEST_TEMPLATE.md` | chars `499` | sha256 `a0f05491f9f8`
+- `AGENTS.md` | chars `3093` | sha256 `16c2e6d8ce45`
+- `CHANGELOG.md` | chars `286` | sha256 `772ef1fbcc3a`
+- `CONTRIBUTING.md` | chars `1642` | sha256 `a669bfdf34fb`
+- `docs\release-v0.1.0.md` | chars `2020` | sha256 `9ecd3e424d21`
+- `docs\security-and-publishing.md` | chars `1532` | sha256 `50fd9f09c65b`
+- `examples\domain-vault-adaptation.md` | chars `1971` | sha256 `aa0af0b70480`
+- `examples\full-iteration.md` | chars `1139` | sha256 `8ce85d46f029`
+- `examples\lightweight-rag.md` | chars `1131` | sha256 `7052802661bc`
+- `examples\no-regression-guard.md` | chars `1500` | sha256 `b67dcc4d8313`
 - `paper_writing_obsidian_vault\.paper_memory_import_index.json` | chars `1179` | sha256 `20dd031fc6e6`
-- `paper_writing_obsidian_vault\00_Index.md` | chars `13633` | sha256 `2d4c94a53791`
+- `paper_writing_obsidian_vault\00_Index.md` | chars `17492` | sha256 `7e6e4f68894f`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-01 Abstract writing preference.md` | chars `1115` | sha256 `fa6792bcfa78`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-01 Introduction first paragraph references.md` | chars `645` | sha256 `a7db1ca67698`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-01 Introduction second paragraph structure.md` | chars `748` | sha256 `866b870666a8`
@@ -776,7 +1144,7 @@ Before a DOCX edit, record the target file scope as full manuscript or partial d
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-04 navier-stokes-formula-centering-corrected.md` | chars `1241` | sha256 `f3e33941923d`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-04 numeric-and-abbreviation-subscripts-upright-rule.md` | chars `1252` | sha256 `41b87fabba72`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-04 omml-node-reuse-error-found.md` | chars `838` | sha256 `a73126cb6fe3`
-- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-04 project-root-harness-enforcement-fixed.md` | chars `1989` | sha256 `fb29481d47bc`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-04 project-root-harness-enforcement-fixed.md` | chars `1972` | sha256 `e83fff4bcd44`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-04 prose-symbol-rule-corrected.md` | chars `705` | sha256 `1476d8c2b16a`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-04 reactive-navier-stokes-derivation-docx-created.md` | chars `2587` | sha256 `96b29229dc19`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-04 reactive-navier-stokes-reference-style-regenerated.md` | chars `1573` | sha256 `e79fa3dd481f`
@@ -798,14 +1166,34 @@ Before a DOCX edit, record the target file scope as full manuscript or partial d
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-04 unicode-encoding-issue-during-omml-rebuild.md` | chars `848` | sha256 `a3ca9c8e54a4`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-04 User resolved abstract and interface wave conflicts.md` | chars `992` | sha256 `076759b43a0f`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-04 Writing retrieval stops at paper memories.md` | chars `751` | sha256 `cdc3ff33a710`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 editable-word-chart-figure-vml-text-fix.md` | chars `1822` | sha256 `0a50c2b080ac`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 hyperelastic-equation-derivation-word-generated.md` | chars `1747` | sha256 `44733113ce81`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 hyperelastic-word-output-confirmed-clean.md` | chars `744` | sha256 `7ec0e7699eb4`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 johnson-cook-gruneisen-docx-unicode-garbled-fix.md` | chars `1784` | sha256 `39c42f8eda15`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 memory destination wording clarified.md` | chars `1164` | sha256 `a5f3cb5ba8cc`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 mentor-level literature summary expression rule added.md` | chars `982` | sha256 `cfad763a0993`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 non-newtonian-fluid-derivation-word-generated.md` | chars `1605` | sha256 `b86d1cfe452a`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 non-newtonian-prose-meta-and-eta-n-italic-fix.md` | chars `1293` | sha256 `50f3b074e226`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 Paul reference material marker checked.md` | chars `1178` | sha256 `476063b107a5`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 R01 mentor introduction review and tracked version.md` | chars `1700` | sha256 `1dfbf9d0012d`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 supervised-non-newtonian-fluid-derivation-drafted.md` | chars `767` | sha256 `5e4af4ffa6b0`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 supervision-priority-scope-workflow-implemented.md` | chars `1757` | sha256 `adab9eb8943b`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-05 welding-window-curve-polished-python.md` | chars `1678` | sha256 `40fcd79cc08d`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-06 codex-rtk-knowledge-base-connection.md` | chars `1134` | sha256 `c806c06a89a7`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-06 complete-metallographic-editable-word-annotation.md` | chars `1594` | sha256 `a0879612821b`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-06 Discussion analysis contribution-result rule.md` | chars `1385` | sha256 `e12bd43d41b6`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-06 IMC temperature discussion inserted into Word.md` | chars `1599` | sha256 `62deebd56502`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-06 low-token-rag-workflow-rule.md` | chars `869` | sha256 `b3a20743338d`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-06 mandatory-rag-startup-rule.md` | chars `1114` | sha256 `bd0717813a84`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-06 metallographic-dimensions-reduced-to-reference-values.md` | chars `1118` | sha256 `e03098d53ae2`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-06 sph-fem-professional-formula-regression-fixed.md` | chars `1461` | sha256 `ce9bfb4c869d`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-16 SCI paper section structure rule added.md` | chars `735` | sha256 `1628594b56d8`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-17 lsdyna-temperature-analysis-recorded.md` | chars `762` | sha256 `2d5c836e3e21`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-26 abstract translation modifier-chain correction.md` | chars `1051` | sha256 `744ed0478c7a`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\2026-06-26 SCI English grammar mentor rules split.md` | chars `1911` | sha256 `9203905945cf`
+- `paper_writing_obsidian_vault\10_Project_Change_Log\Hermes_maintenance_log.md` | chars `7121` | sha256 `ad5f85d525eb`
 - `paper_writing_obsidian_vault\10_Project_Change_Log\Paper memory synchronization convention.md` | chars `590` | sha256 `afcec980bd37`
+- `paper_writing_obsidian_vault\20_Paper_Memories\2026-06-17 LS-DYNA temperature analysis phase-change thermal material.md` | chars `4279` | sha256 `57b5ec081fa7`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Abstract final rule - intermetallic layer thickness and distribution.md` | chars `1201` | sha256 `3f9a6cd201d6`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Abstract rule - direct opening superseded version.md` | chars `1306` | sha256 `a43ca7522063`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Abstract rule - earlier industry background constraint.md` | chars `567` | sha256 `80c88dd80dcd`
@@ -813,10 +1201,13 @@ Before a DOCX edit, record the target file scope as full manuscript or partial d
 - `paper_writing_obsidian_vault\20_Paper_Memories\Abstract rule - predict layer thickness and distribution.md` | chars `805` | sha256 `294b90bec343`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Adjacent formula tables can merge in Word after BuildUp.md` | chars `727` | sha256 `e115881ee06c`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Before creating scripts retrieve and reuse local scripts.md` | chars `1989` | sha256 `cb5e1ce1492b`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Codex RTK include should route into project harness.md` | chars `1242` | sha256 `1bc4d7849e5b`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Discussion analysis should emphasize contribution and results.md` | chars `1761` | sha256 `349b43157d88`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Do not patch text inside corrupted OMML formulas.md` | chars `807` | sha256 `6a3cd54b0043`
 - `paper_writing_obsidian_vault\20_Paper_Memories\DOCX formula rewrite requires OMML structure check.md` | chars `864` | sha256 `e8a300df5c3e`
 - `paper_writing_obsidian_vault\20_Paper_Memories\DOCX manuscript edits must distinguish partial drafts from full manuscript.md` | chars `1007` | sha256 `878c708d3c80`
 - `paper_writing_obsidian_vault\20_Paper_Memories\DOCX terminology unification and Windows processing pitfalls.md` | chars `1522` | sha256 `f8e2e8deaef5`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Editable Word figures need native charts not unverified VML textboxes.md` | chars `1828` | sha256 `4c95d64e7d38`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Eq28 plastic work uses density inverse.md` | chars `446` | sha256 `1cade249ecb9`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Equation layout regression caused by two-column tables.md` | chars `1160` | sha256 `079ddc8a5a43`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Formula layout needs vertical centering and compact equations.md` | chars `1340` | sha256 `7c86ef97afd2`
@@ -831,14 +1222,20 @@ Before a DOCX edit, record the target file scope as full manuscript or partial d
 - `paper_writing_obsidian_vault\20_Paper_Memories\Introduction revision aligned with mentor abstract dual mainline.md` | chars `1633` | sha256 `49e14602b644`
 - `paper_writing_obsidian_vault\20_Paper_Memories\KB RAG should retrieve selectively and preserve evidence boundaries.md` | chars `1995` | sha256 `d8a7b2e22d80`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Keyword selection rule - method object morphology mechanism process.md` | chars `1712` | sha256 `bcbc13128ed0`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Memory destination wording should distinguish total memory from project knowledge base.md` | chars `1842` | sha256 `7b4230a4726f`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Mentor feedback - abstract framing and priority rule.md` | chars `1647` | sha256 `a7660764fbc4`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Mentor feedback - Chinese expression grammar and academic style.md` | chars `1220` | sha256 `6d17ca3747db`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Mentor feedback - introduction first paragraph must stay on topic.md` | chars `1299` | sha256 `5c21781ef660`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Mentor R01 introduction revision logic and advantages.md` | chars `2342` | sha256 `9d22422d8c45`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Mentor revised introduction first paragraph style rule.md` | chars `1309` | sha256 `ea3f331b93a0`
-- `paper_writing_obsidian_vault\20_Paper_Memories\Paper memory export path convention.md` | chars `903` | sha256 `586870040a51`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Mentor source - SCI English grammar common issues V01.md` | chars `2601` | sha256 `182ef54d833c`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Mentor-level literature summaries require accurate elegant varied expression.md` | chars `1821` | sha256 `825f922749aa`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Paper memory export path convention.md` | chars `863` | sha256 `2d60ae330488`
+- `paper_writing_obsidian_vault\20_Paper_Memories\PowerShell-fed DOCX generators must use ASCII-safe source plus Unicode escapes.md` | chars `1460` | sha256 `0ae47cce31a7`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Professional Word formulas require post-BuildUp layout audit.md` | chars `1879` | sha256 `82797964df1a`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Project harness must be visible from project root.md` | chars `1209` | sha256 `c62ac14b2239`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Python launcher failure during figure polishing.md` | chars `1401` | sha256 `9213ccfab81a`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Reference material markers require source-supported material names.md` | chars `993` | sha256 `f3feb2390598`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Reference-format Word generation must clone and compare reference DOCX.md` | chars `1275` | sha256 `6bedec3575b8`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Results sections should place figure lead-in at paragraph end.md` | chars `1301` | sha256 `ec307d48356a`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Retargeting drafts must stay source-based and mark figure changes.md` | chars `1302` | sha256 `c6dbc9086a8f`
@@ -846,6 +1243,8 @@ Before a DOCX edit, record the target file scope as full manuscript or partial d
 - `paper_writing_obsidian_vault\20_Paper_Memories\SCI-memory auto-record conversation changes and user suggestions.md` | chars `1098` | sha256 `8a867faea685`
 - `paper_writing_obsidian_vault\20_Paper_Memories\SCI-memory workflow rule - record to 10 and 40, refresh 20, iterate to 80.md` | chars `2247` | sha256 `e3cee81df315`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Section 4.3 retargeting should shift from process display to mechanism argument.md` | chars `1927` | sha256 `76dac1c0499c`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Skill Promotion Candidates.md` | chars `947` | sha256 `9c469fb6bb3f`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Skill promotion governance for repeated workflows.md` | chars `1195` | sha256 `4f9d5b952f92`
 - `paper_writing_obsidian_vault\20_Paper_Memories\SPH-FEM energy equation staged derivation.md` | chars `1520` | sha256 `070dc7a6f019`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Supervision non-Newtonian formula Word output followed confirmed baseline.md` | chars `1060` | sha256 `14bb25c8739a`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Temporary check translations should be literal.md` | chars `714` | sha256 `31d042f0b951`
@@ -857,6 +1256,7 @@ Before a DOCX edit, record the target file scope as full manuscript or partial d
 - `paper_writing_obsidian_vault\20_Paper_Memories\User correction - eta and n are variables in non-Newtonian formulas.md` | chars `648` | sha256 `4e8f76f86408`
 - `paper_writing_obsidian_vault\20_Paper_Memories\User correction - formula objects must be checked for damaged characters and tense.md` | chars `985` | sha256 `a4577c8c06a0`
 - `paper_writing_obsidian_vault\20_Paper_Memories\User correction - prose formula symbols require real formatting.md` | chars `1766` | sha256 `20505fcb874d`
+- `paper_writing_obsidian_vault\20_Paper_Memories\User correction - reduce overloaded adjective and noun modifier chains in SCI English.md` | chars `1659` | sha256 `276f223395f3`
 - `paper_writing_obsidian_vault\20_Paper_Memories\User correction - reference margins and mixed math run typography.md` | chars `1469` | sha256 `f230473b9836`
 - `paper_writing_obsidian_vault\20_Paper_Memories\User correction - variables italic constants and labels upright.md` | chars `1106` | sha256 `ca19edea0d79`
 - `paper_writing_obsidian_vault\20_Paper_Memories\User decision - abstract opening compromise.md` | chars `1335` | sha256 `4767e7cdff89`
@@ -871,34 +1271,54 @@ Before a DOCX edit, record the target file scope as full manuscript or partial d
 - `paper_writing_obsidian_vault\20_Paper_Memories\User preference - record format errors and fixes.md` | chars `988` | sha256 `a10d3b3c0564`
 - `paper_writing_obsidian_vault\20_Paper_Memories\User preference - retain only theory chapter formulas.md` | chars `877` | sha256 `e3f99f196baa`
 - `paper_writing_obsidian_vault\20_Paper_Memories\User preference - use reference article as default DOCX format.md` | chars `974` | sha256 `bf86372a0ce9`
-- `paper_writing_obsidian_vault\20_Paper_Memories\Word COM should save professional formula DOCX through ASCII temp path.md` | chars `1111` | sha256 `ef494cb5697c`
+- `paper_writing_obsidian_vault\20_Paper_Memories\User requirement - conclusion chapter three-part structure.md` | chars `921` | sha256 `1d334a4e73f1`
+- `paper_writing_obsidian_vault\20_Paper_Memories\User requirement - SCI paper overall section writing rules.md` | chars `1799` | sha256 `391a1da4b4d4`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Word COM should save professional formula DOCX through ASCII temp path.md` | chars `1104` | sha256 `53f1198b1332`
+- `paper_writing_obsidian_vault\20_Paper_Memories\Word formula prose audit promoted to skill.md` | chars `1397` | sha256 `71ba75ea0a27`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Workflow governance must stay separate from paper requirements.md` | chars `1695` | sha256 `febce34b680a`
 - `paper_writing_obsidian_vault\20_Paper_Memories\Writing-time retrieval should stop at paper memories.md` | chars `1038` | sha256 `0fe22107019f`
-- `paper_writing_obsidian_vault\30_Writing_Rules\Abstract opening should connect application context to core relation.md` | chars `884` | sha256 `773cf8cb3b33`
-- `paper_writing_obsidian_vault\30_Writing_Rules\Abstract opening should state object-variable-effect.md` | chars `1177` | sha256 `67d8c7468b72`
-- `paper_writing_obsidian_vault\30_Writing_Rules\Experiment-simulation gaps should be expressed with variables.md` | chars `730` | sha256 `1e34b73a5ff8`
-- `paper_writing_obsidian_vault\30_Writing_Rules\Literature review should progress through capability and limitation.md` | chars `1254` | sha256 `7e0ed832bf7f`
-- `paper_writing_obsidian_vault\30_Writing_Rules\Method description should serve the research purpose.md` | chars `1161` | sha256 `11ce812d40f7`
-- `paper_writing_obsidian_vault\30_Writing_Rules\Numeric and abbreviation subscripts must be upright in formulas and prose.md` | chars `1225` | sha256 `e237a1a77abe`
-- `paper_writing_obsidian_vault\30_Writing_Rules\Paper framing should keep interface wave and intermetallic compound as dual mainlines.md` | chars `855` | sha256 `ecad5f1c40d1`
-- `paper_writing_obsidian_vault\30_Writing_Rules\Reference upgrades must preserve sentence-level support.md` | chars `1150` | sha256 `7f7f45e5389a`
-- `paper_writing_obsidian_vault\35_Workflow_Governance\Before creating scripts retrieve and reuse local scripts.md` | chars `1250` | sha256 `0c2d1da716ba`
-- `paper_writing_obsidian_vault\35_Workflow_Governance\DOCX edit scope must be verified before manuscript changes.md` | chars `982` | sha256 `dbb9e7ed0af7`
-- `paper_writing_obsidian_vault\35_Workflow_Governance\Legacy migrated - paper writing principle summary.md` | chars `6470` | sha256 `eb81e9c32cef`
-- `paper_writing_obsidian_vault\35_Workflow_Governance\Manuscript content must be confirmed in chat before Word insertion.md` | chars `1482` | sha256 `dd4ab72e03d9`
-- `paper_writing_obsidian_vault\35_Workflow_Governance\Mentor advice has higher priority in paper-memory reasoning.md` | chars `1528` | sha256 `6e2f229f48a2`
-- `paper_writing_obsidian_vault\35_Workflow_Governance\Process governance must not become manuscript requirements.md` | chars `1136` | sha256 `12c949cd4427`
-- `paper_writing_obsidian_vault\35_Workflow_Governance\Project root must expose mandatory harness entrypoint.md` | chars `1051` | sha256 `f5015e53c7f6`
-- `paper_writing_obsidian_vault\35_Workflow_Governance\RAG retrieval should be a selective loading layer.md` | chars `1114` | sha256 `148061268093`
-- `paper_writing_obsidian_vault\35_Workflow_Governance\Writing knowledge should become reusable process memory.md` | chars `1325` | sha256 `febdd9011249`
-- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Abstract opening should connect application context to core relation.md` | chars `1067` | sha256 `d81979c08f27`
-- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Abstract opening should state object-variable-effect.md` | chars `1344` | sha256 `fb121deb1409`
-- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Experiment-simulation gaps should be expressed with variables.md` | chars `906` | sha256 `33aaf9300296`
-- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Literature review should progress through capability and limitation.md` | chars `1436` | sha256 `23da1cb8899e`
-- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Method description should serve the research purpose.md` | chars `1328` | sha256 `0c7c81dc1a6f`
-- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Numeric and abbreviation subscripts must be upright in formulas and prose.md` | chars `1413` | sha256 `0ad9a63a217c`
-- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Paper framing should keep interface wave and intermetallic compound as dual mainlines.md` | chars `1055` | sha256 `90845e4b4c67`
-- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Reference upgrades must preserve sentence-level support.md` | chars `1320` | sha256 `687b5d381960`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Abstract opening should connect application context to core relation.md` | chars `884` | sha256 `fa6312f9da41`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Abstract opening should state object-variable-effect.md` | chars `1205` | sha256 `5b887f68116c`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Conclusion section should summarize work innovation limitations and future extension.md` | chars `1221` | sha256 `6ddda83c2a72`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Discussion section should analyze mechanism comparison application and limitations.md` | chars `1499` | sha256 `c01306c3caeb`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Experiment-simulation gaps should be expressed with variables.md` | chars `887` | sha256 `1ba01be6d3a9`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Literature review should progress through capability and limitation.md` | chars `1236` | sha256 `ed983c7a8056`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Method description should serve the research purpose.md` | chars `1161` | sha256 `7f924d53630f`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Numeric and abbreviation subscripts must be upright in formulas and prose.md` | chars `1225` | sha256 `78b7ab9edf9d`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Numerical simulation section should connect model parameters to research claims.md` | chars `1154` | sha256 `eaa2331e4165`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Paper framing should keep interface wave and intermetallic compound as dual mainlines.md` | chars `855` | sha256 `f72a02eb70af`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Reference upgrades must preserve sentence-level support.md` | chars `1173` | sha256 `e523d7d52d0e`
+- `paper_writing_obsidian_vault\30_Writing_Rules\SCI abstract should cover topic purpose method result conclusion.md` | chars `1286` | sha256 `94a3fd81c0ea`
+- `paper_writing_obsidian_vault\30_Writing_Rules\SCI introduction should use recent literature to expose gaps and route the study.md` | chars `1513` | sha256 `4bfe1dcd78df`
+- `paper_writing_obsidian_vault\30_Writing_Rules\SCI paper sections should form a complete problem-method-evidence chain.md` | chars `1558` | sha256 `a2f18e9d4a5b`
+- `paper_writing_obsidian_vault\30_Writing_Rules\Theoretical model section should explain equations assumptions and derivations.md` | chars `1186` | sha256 `aa49e6277cb3`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\Before creating scripts retrieve and reuse local scripts.md` | chars `1250` | sha256 `af2c97310982`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\DOCX edit scope must be verified before manuscript changes.md` | chars `982` | sha256 `0131b6c62533`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\Legacy migrated - paper writing principle summary.md` | chars `8260` | sha256 `82596d000246`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\Manuscript content must be confirmed in chat before Word insertion.md` | chars `1567` | sha256 `eade28b98c64`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\Mentor advice has higher priority in paper-memory reasoning.md` | chars `1518` | sha256 `67786a0667b8`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\Process governance must not become manuscript requirements.md` | chars `1136` | sha256 `3483154d04b5`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\Project root must expose mandatory harness entrypoint.md` | chars `1109` | sha256 `21825d38138e`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\RAG retrieval should be a selective loading layer.md` | chars `1172` | sha256 `2618ab0baf01`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\Repeated workflow knowledge may be promoted to skills.md` | chars `1091` | sha256 `0b836eb97383`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\Skill promotion registry.md` | chars `3430` | sha256 `c0d6347ed803`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\Word formula prose audit should run as a narrow skill.md` | chars `1631` | sha256 `83833b0532ca`
+- `paper_writing_obsidian_vault\35_Workflow_Governance\Writing knowledge should become reusable process memory.md` | chars `1315` | sha256 `a7cc5e89488b`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Abstract opening should connect application context to core relation.md` | chars `1067` | sha256 `1ed4a2b0a5d7`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Abstract opening should state object-variable-effect.md` | chars `1372` | sha256 `cee270f84196`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Conclusion section should summarize work innovation limitations and future extension.md` | chars `1420` | sha256 `b1b438973015`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Discussion section should analyze mechanism comparison application and limitations.md` | chars `1696` | sha256 `5fd0923d420d`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Experiment-simulation gaps should be expressed with variables.md` | chars `1063` | sha256 `a87bd9ac8b01`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Literature review should progress through capability and limitation.md` | chars `1418` | sha256 `ebe123746e7e`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Method description should serve the research purpose.md` | chars `1328` | sha256 `b5f1124fd5b2`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Numeric and abbreviation subscripts must be upright in formulas and prose.md` | chars `1413` | sha256 `ff0ed93d2c48`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Numerical simulation section should connect model parameters to research claims.md` | chars `1348` | sha256 `97097cd9a8a9`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Paper framing should keep interface wave and intermetallic compound as dual mainlines.md` | chars `1055` | sha256 `676253b4d10f`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Reference upgrades must preserve sentence-level support.md` | chars `1343` | sha256 `6f4968fd992c`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\SCI abstract should cover topic purpose method result conclusion.md` | chars `1465` | sha256 `e56e80623b54`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\SCI introduction should use recent literature to expose gaps and route the study.md` | chars `1708` | sha256 `a32951450151`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\SCI paper sections should form a complete problem-method-evidence chain.md` | chars `1744` | sha256 `8fd859005745`
+- `paper_writing_obsidian_vault\40_Final_Generalized_Rules\Theoretical model section should explain equations assumptions and derivations.md` | chars `1379` | sha256 `86d359d04e26`
 - `paper_writing_obsidian_vault\45_Supervision\2026-06-04 Abstract opening needs industry and problem background.md` | chars `2953` | sha256 `dd6e150bc2cb`
 - `paper_writing_obsidian_vault\45_Supervision\2026-06-04 Active supervision abstract superstructure impact pending.md` | chars `2665` | sha256 `8e177182ef6d`
 - `paper_writing_obsidian_vault\45_Supervision\2026-06-04 clean-theory-formula-output-promoted-baseline.md` | chars `1165` | sha256 `8f1886286977`
@@ -910,8 +1330,10 @@ Before a DOCX edit, record the target file scope as full manuscript or partial d
 - `paper_writing_obsidian_vault\45_Supervision\2026-06-04 supervised-formula-notation-test-navier-stokes.md` | chars `1600` | sha256 `860b242169f6`
 - `paper_writing_obsidian_vault\45_Supervision\2026-06-05 non-newtonian-meta-prose-and-variable-italic-regression.md` | chars `1011` | sha256 `434e9bc48e86`
 - `paper_writing_obsidian_vault\45_Supervision\2026-06-05 supervision-priority-below-mentor-scoped-above-ordinary-layers.md` | chars `906` | sha256 `997b881b4b9d`
+- `paper_writing_obsidian_vault\45_Supervision\2026-06-06 mandatory-rag-startup-and-repair.md` | chars `3193` | sha256 `0cd4e6ebb471`
+- `paper_writing_obsidian_vault\45_Supervision\2026-06-06 SPH-FEM formula professional-format regression.md` | chars `3588` | sha256 `3687b3361854`
 - `paper_writing_obsidian_vault\45_Supervision\README.md` | chars `1167` | sha256 `0b6ccf9f9ba6`
 - `paper_writing_obsidian_vault\45_Supervision\TEMPLATE supervision correction.md` | chars `873` | sha256 `b7b121a1ec00`
-- `paper_writing_obsidian_vault\50_Conflicts\No unresolved conflicts.md` | chars `137` | sha256 `043dee46939d`
-- `PROJECT_HARNESS_WORKFLOW.md` | chars `7180` | sha256 `b44f76fbd9be`
-- `README.md` | chars `8051` | sha256 `c7b1cc3ab90f`
+- `paper_writing_obsidian_vault\50_Conflicts\No unresolved conflicts.md` | chars `137` | sha256 `5071f5bb4e6a`
+- `PROJECT_HARNESS_WORKFLOW.md` | chars `11300` | sha256 `63d9973ad91a`
+- `README.md` | chars `9307` | sha256 `9bcc4f67568b`

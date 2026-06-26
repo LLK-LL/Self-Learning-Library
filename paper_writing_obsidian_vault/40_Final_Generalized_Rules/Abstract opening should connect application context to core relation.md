@@ -1,6 +1,6 @@
 ﻿---
 title: Abstract opening should connect application context to core relation
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - C2
   - final-generalized-rule

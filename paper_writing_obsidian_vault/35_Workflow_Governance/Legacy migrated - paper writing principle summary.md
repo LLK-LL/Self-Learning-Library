@@ -1,6 +1,6 @@
 ﻿---
 title: Legacy migrated - paper writing principle summary
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - layer/reasoning
   - legacy-migrated
@@ -21,6 +21,13 @@ This note replaces the previous principle-summary entry. It is stored in `35_Wor
 - [[Literature review should progress through capability and limitation]]
 - [[Experiment-simulation gaps should be expressed with variables]]
 - [[Reference upgrades must preserve sentence-level support]]
+- [[SCI paper sections should form a complete problem-method-evidence chain]]
+- [[SCI abstract should cover topic purpose method result conclusion]]
+- [[SCI introduction should use recent literature to expose gaps and route the study]]
+- [[Theoretical model section should explain equations assumptions and derivations]]
+- [[Numerical simulation section should connect model parameters to research claims]]
+- [[Discussion section should analyze mechanism comparison application and limitations]]
+- [[Conclusion section should summarize work innovation limitations and future extension]]
 - [[Numeric and abbreviation subscripts must be upright in formulas and prose]]
 - [[Writing knowledge should become reusable process memory]]
 - [[Process governance must not become manuscript requirements]]
@@ -28,6 +35,8 @@ This note replaces the previous principle-summary entry. It is stored in `35_Wor
 - [[Project root must expose mandatory harness entrypoint]]
 - [[Before creating scripts retrieve and reuse local scripts]]
 - [[Manuscript content must be confirmed in chat before Word insertion]]
+- [[Repeated workflow knowledge may be promoted to skills]]
+- [[Word formula prose audit should run as a narrow skill]]
 - [[DOCX edit scope must be verified before manuscript changes]]
 - [[Abstract opening should connect application context to core relation]]
 - [[Paper framing should keep interface wave and intermetallic compound as dual mainlines]]
@@ -103,13 +112,32 @@ This note replaces the previous principle-summary entry. It is stored in `35_Wor
 - [[2026-06-04 unicode-encoding-issue-during-omml-rebuild]]
 - [[2026-06-04 User resolved abstract and interface wave conflicts]]
 - [[2026-06-04 Writing retrieval stops at paper memories]]
+- [[2026-06-05 editable-word-chart-figure-vml-text-fix]]
 - [[2026-06-05 hyperelastic-equation-derivation-word-generated]]
 - [[2026-06-05 hyperelastic-word-output-confirmed-clean]]
+- [[2026-06-05 johnson-cook-gruneisen-docx-unicode-garbled-fix]]
+- [[2026-06-05 memory destination wording clarified]]
+- [[2026-06-05 mentor-level literature summary expression rule added]]
 - [[2026-06-05 non-newtonian-fluid-derivation-word-generated]]
 - [[2026-06-05 non-newtonian-prose-meta-and-eta-n-italic-fix]]
+- [[2026-06-05 Paul reference material marker checked]]
 - [[2026-06-05 R01 mentor introduction review and tracked version]]
 - [[2026-06-05 supervised-non-newtonian-fluid-derivation-drafted]]
 - [[2026-06-05 supervision-priority-scope-workflow-implemented]]
+- [[2026-06-05 welding-window-curve-polished-python]]
+- [[2026-06-06 codex-rtk-knowledge-base-connection]]
+- [[2026-06-06 complete-metallographic-editable-word-annotation]]
+- [[2026-06-06 Discussion analysis contribution-result rule]]
+- [[2026-06-06 IMC temperature discussion inserted into Word]]
+- [[2026-06-06 low-token-rag-workflow-rule]]
+- [[2026-06-06 mandatory-rag-startup-rule]]
+- [[2026-06-06 metallographic-dimensions-reduced-to-reference-values]]
+- [[2026-06-06 sph-fem-professional-formula-regression-fixed]]
+- [[2026-06-16 SCI paper section structure rule added]]
+- [[2026-06-17 lsdyna-temperature-analysis-recorded]]
+- [[2026-06-26 abstract translation modifier-chain correction]]
+- [[2026-06-26 SCI English grammar mentor rules split]]
+- [[Hermes_maintenance_log]]
 - [[Paper memory synchronization convention]]
 
 ## Rule

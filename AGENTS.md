@@ -5,8 +5,10 @@ This project defaults to the local harness. `SCI-memory` remains a fallback skil
 Required behavior:
 
 - Use the local harness for writing-rule application, no-regression checks, paper-memory collection, and rule-layer iteration.
+- Codex owns all project knowledge-base maintenance in this workspace, including RAG health checks, orphan-note checks, index checks, iteration, conflict monitoring, and skill-promotion review. Do not route these tasks to Hermes/Jarvis or ask the user to summon Hermes for knowledge-base maintenance.
 - Trigger the harness for any request that changes article/manuscript content, asks Codex to write or revise paper content, records paper-writing knowledge, extracts writing rules, or performs final rule iteration inside this project.
 - When the harness is triggered, automatically run writing-rule application, no-regression guard, and collection workflow before the final response.
+- In this workspace, an unqualified request whose meaning is "save/write to memory" means total memory, not the local paper knowledge base. Only explicit requests whose meaning is "record to the project knowledge base" or "record to the paper knowledge base" should write into the project paper knowledge base.
 - For any user-requested manuscript-content change, provide the proposed revised content in the chat first and wait for user confirmation before writing that wording into Word/DOCX; file inspection, RAG, formatting checks, and knowledge-base maintenance may still run before confirmation.
 - Writing-rule application must use lightweight local RAG by default: retrieve task-relevant rules first with `py tools\kb_rag.py --query "<task keywords>" --limit 3`, load only matched rules or excerpts when feasible, and reserve full rule-layer scanning for explicit final summarization, final generalization, iteration, screening, or automation.
 - For ordinary writing tasks, do not add `--include-workflow`, `--include-evidence`, or `--include-related`; do not load `70_Iterative_Thinking` as task context.

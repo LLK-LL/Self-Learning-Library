@@ -1,6 +1,6 @@
 ﻿---
 title: Project root must expose mandatory harness entrypoint
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - G9
   - layer/reasoning
@@ -25,6 +25,7 @@ The project-local harness can only be enforced reliably when root AGENTS.md cont
 
 ## Evidence Memories
 
+- [[Codex RTK include should route into project harness]]
 - [[Project harness must be visible from project root]]
 
 ## Governance Test

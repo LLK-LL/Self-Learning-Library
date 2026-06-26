@@ -1,6 +1,6 @@
 ﻿---
 title: Writing knowledge should become reusable process memory
-created: 2026-06-05 10:55
+created: 2026-06-26 17:13
 tags:
   - G6
   - layer/reasoning
@@ -32,7 +32,7 @@ Paper edits should be stored as reusable process memory: problem, action, ration
 - [[Mentor feedback - abstract framing and priority rule]]
 - [[Mentor feedback - introduction first paragraph must stay on topic]]
 - [[Mentor revised introduction first paragraph style rule]]
-- [[User confirmed clean theory formula Word output as future basis]]
+- [[Mentor source - SCI English grammar common issues V01]]
 
 ## Governance Test
 
